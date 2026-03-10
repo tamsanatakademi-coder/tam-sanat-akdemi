@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hakkımızda | Tam Sanat Akademi Antalya</title>
+<meta name="description" content="Tam Sanat Akademi hakkında — kuruluş hikayemiz, eğitmenlerimiz, MEB onayımız ve vizyonumuz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1a1208;--cream:#faf6ef;--warm:#f2ebe0;--terracotta:#c4562a;--terracotta-light:#e07050;--gold:#c9972b;--teal:#2a7c7a;--text:#2d2416;--muted:#6b5e4e;--border:#e0d4c0}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,246,239,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:68px}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.1}
+  .nav-logo span{color:var(--terracotta)}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{font-size:.875rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+  .nav-links a:hover,.nav-active{color:var(--terracotta)!important;font-weight:600!important}
+  .nav-cta{background:var(--terracotta);color:#fff!important;padding:10px 20px;border-radius:50px;font-size:.875rem;font-weight:600;text-decoration:none;white-space:nowrap}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px}
+  .mobile-menu{display:none;position:fixed;inset:0;z-index:999;background:var(--cream);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--ink);text-decoration:none}
+  .mobile-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--ink)}
+  .btn-primary-nav{background:var(--terracotta);color:#fff!important;padding:12px 24px;border-radius:50px;font-size:1rem!important;font-weight:700!important}
+
+  .page-hero{padding:120px 5vw 60px;background:linear-gradient(135deg,var(--warm),var(--cream));text-align:center;position:relative;overflow:hidden}
+  .page-hero::before{content:'';position:absolute;top:-60px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(196,86,42,.07) 0%,transparent 70%)}
+  .breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:1rem}
+  .breadcrumb a{color:var(--terracotta);text-decoration:none}
+  .page-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--ink);margin-bottom:1rem}
+  .page-title em{font-style:italic;color:var(--terracotta)}
+  .page-sub{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.7}
+
+  section{padding:70px 5vw}
+  .section-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.75rem}
+  .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:1rem}
+
+  /* ── HİKAYE ── */
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+  .story-visual{border-radius:24px;aspect-ratio:4/5;background:linear-gradient(135deg,#f5e8d8,#d4a87c);display:flex;align-items:center;justify-content:center;font-size:6rem;position:relative;overflow:hidden}
+  .story-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(196,86,42,.2) 0%,transparent 60%)}
+  .story-year{display:inline-flex;align-items:center;gap:8px;background:rgba(201,151,43,.12);border:1px solid rgba(201,151,43,.25);color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:1rem}
+  .story-text p{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:1rem}
+  .story-highlight{background:rgba(196,86,42,.06);border-left:3px solid var(--terracotta);border-radius:0 12px 12px 0;padding:16px 20px;margin:1.5rem 0;font-size:.9rem;color:var(--text);font-style:italic;line-height:1.6}
+
+  /* ── İSTATİSTİKLER ── */
+  .stats-section{background:var(--ink);border-radius:28px;padding:60px 5vw;margin:0 0 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+  .stat-item{}
+  .stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--terracotta-light);line-height:1;margin-bottom:6px}
+  .stat-label{font-size:.82rem;color:rgba(255,255,255,.5)}
+  .stat-desc{font-size:.75rem;color:rgba(255,255,255,.3);margin-top:3px}
+
+  /* ── EĞİTMENLER ── */
+  .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;margin-top:2.5rem}
+  .team-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px 24px;text-align:center;transition:transform .3s,box-shadow .3s}
+  .team-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(26,18,8,.1)}
+  .team-avatar{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-family:'Playfair Display',serif;font-weight:700;color:#fff;margin:0 auto 14px}
+  .team-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+  .team-role{font-size:.78rem;color:var(--terracotta);font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
+  .team-bio{font-size:.82rem;color:var(--muted);line-height:1.6}
+  .team-uni{display:inline-block;background:var(--warm);border-radius:8px;padding:5px 10px;font-size:.72rem;color:var(--muted);font-weight:600;margin-top:10px}
+
+  /* ── MEB ONAY ── */
+  .meb-section{background:linear-gradient(135deg,var(--teal) 0%,#1a5c5a 100%);border-radius:28px;padding:60px 5vw;text-align:center;color:#fff}
+  .meb-icon{font-size:4rem;margin-bottom:1rem}
+  .meb-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:1rem}
+  .meb-text{font-size:.95rem;color:rgba(255,255,255,.75);max-width:600px;margin:0 auto;line-height:1.7}
+  .meb-badges{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+  .meb-badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:14px 20px;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.85)}
+
+  /* ── DEĞERLERİMİZ ── */
+  .values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem;margin-top:2rem}
+  .value-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px}
+  .value-icon{font-size:1.8rem;margin-bottom:10px}
+  .value-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .value-text{font-size:.82rem;color:var(--muted);line-height:1.6}
+
+  /* ── İLETİŞİM ── */
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:2rem}
+  .contact-card{background:var(--warm);border-radius:14px;padding:18px;display:flex;align-items:flex-start;gap:14px}
+  .contact-icon-wrap{width:42px;height:42px;background:var(--terracotta);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;flex-shrink:0}
+  .contact-label{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+  .contact-value{font-size:.875rem;font-weight:600;color:var(--ink)}
+  .contact-value a{color:var(--ink);text-decoration:none}
+  .contact-value a:hover{color:var(--terracotta)}
+
+  .wa-sticky{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 6px 24px rgba(37,211,102,.45);text-decoration:none;animation:pulse-wa 2.5s ease-in-out infinite}
+  @keyframes pulse-wa{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.45)}50%{box-shadow:0 6px 36px rgba(37,211,102,.7)}}
+
+  @media(max-width:900px){.story-grid{grid-template-columns:1fr}.story-visual{display:none}.stats-grid{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}.hamburger{display:flex}}
+  @media(max-width:600px){.stats-grid{grid-template-columns:1fr 1fr}.values-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/902423247439" class="wa-sticky" aria-label="WhatsApp">💬</a>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+  <a href="index.html" onclick="closeMobileMenu()">Ana Sayfa</a>
+  <a href="dersler.html" onclick="closeMobileMenu()">Dersler</a>
+  <a href="satis.html" onclick="closeMobileMenu()">Fiyatlar</a>
+  <a href="hakkimizda.html" onclick="closeMobileMenu()">Hakkımızda</a>
+  <a href="galeri.html" onclick="closeMobileMenu()">Galeri</a>
+  <a href="satis.html#kayit-form" class="btn-primary-nav" onclick="closeMobileMenu()">Kayıt Ol</a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Tam <span>Sanat</span><br>Akademi</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="dersler.html">Dersler</a></li>
+    <li><a href="satis.html">Fiyatlar</a></li>
+    <li><a href="hakkimizda.html" class="nav-active">Hakkımızda</a></li>
+    <li><a href="galeri.html">Galeri</a></li>
+  </ul>
+  <a href="satis.html#kayit-form" class="nav-cta">Ücretsiz Deneme →</a>
+  <div class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Ana Sayfa</a> → Hakkımızda</div>
+  <h1 class="page-title">Sanat ile Buluşmanın<br><em>TAM</em> Adresi</h1>
+  <p class="page-sub">2020'den bu yana Antalya Muratpaşa'da, tutkuyla sanat eğitimi veriyoruz.</p>
+</div>
+
+<!-- HİKAYE -->
+<section>
+  <div class="story-grid">
+    <div class="story-visual">🎨</div>
+    <div class="story-text">
+      <div class="story-year">📅 Kuruluş: 23 Şubat 2020</div>
+      <h2 class="section-title">Hikayemiz</h2>
+      <p>Tam Sanat Akademi, Marmara Üniversitesi Eğitim Fakültesi mezunu Görsel Sanatlar Öğretmeni <strong>Mehmet Bilgin</strong> tarafından 23 Şubat 2020'de <em>"Sanat ile buluşmanın TAM adresi"</em> sloganıyla Antalya Muratpaşa'da kuruldu.</p>
+      <p>Akademinin temel felsefesi, <strong>"tam içerikli eğitim"</strong> anlayışıyla her yaşa sanatı ulaştırmaktır. Resim, Seramik, Müzik (Piyano, Gitar, Keman, Bateri, Yan Flüt, Bağlama), Bale, Modern Dans, Yaratıcı Drama ile Güzel Sanatlar ve Konservatuar Hazırlık programları tek çatı altında toplanmıştır.</p>
+      <div class="story-highlight">"Sanat ile buluşmanın TAM adresi — tam içerikli eğitimle her yaşa sanatı ulaştırıyoruz."</div>
+      <p>Tüm programlar Millî Eğitim Bakanlığı onaylı müfredatlarla yürütülmekte; her seviye tamamlandığında öğrencilere resmi MEB sertifikası verilmektedir. Bugün 5.5K'yi aşan Instagram topluluğu ve Yandex Haritalar'daki 4.8 puanıyla Antalya'nın en güvenilir sanat akademilerinden biri olmayı sürdürmekteyiz.</p>
+    </div>
+  </div>
+</section>
+
+<!-- İSTATİSTİKLER -->
+<section style="padding-top:0;padding-bottom:0">
+  <div class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item"><div class="stat-num">2020</div><div class="stat-label">Kuruluş Yılı</div><div class="stat-desc">23 Şubat 2020</div></div>
+      <div class="stat-item"><div class="stat-num">5.5K+</div><div class="stat-label">Instagram Takipçisi</div><div class="stat-desc">Büyüyen topluluk</div></div>
+      <div class="stat-item"><div class="stat-num">4.8★</div><div class="stat-label">Yandex Puanı</div><div class="stat-desc">5 üzerinden</div></div>
+      <div class="stat-item"><div class="stat-num">13+</div><div class="stat-label">Farklı Kurs</div><div class="stat-desc">MEB onaylı programlar</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EĞİTMENLER -->
+<section>
+  <span class="section-tag">Öğretim Kadrosu</span>
+  <h2 class="section-title">Eğitmenlerimiz</h2>
+  <p style="color:var(--muted);line-height:1.7;max-width:520px">Alanında uzman, MEB onaylı programlarla çalışan deneyimli eğitmenlerimizle tanışın.</p>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar" style="background:var(--terracotta)">M</div>
+      <div class="team-name">Mehmet Bilgin</div>
+      <div class="team-role">Kurucu Müdür & Görsel Sanatlar</div>
+      <div class="team-bio">Görsel Sanatlar Öğretmeni. Resim kursu üç seviyeli (4–6, 7–9, 10–12 yaş) MEB onaylı programla yürütülmekte; renk, doku, çizgi ve kompozisyon becerilerinden başlayarak akademik resme kadar ilerlemektedir.</div>
+      <span class="team-uni">🎓 Marmara Üniversitesi Eğitim Fak.</span>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background:var(--teal)">🎵</div>
+      <div class="team-name">Müzik Eğitmenleri</div>
+      <div class="team-role">Piyano · Gitar · Keman · Bateri · Yan Flüt · Bağlama</div>
+      <div class="team-bio">Tüm enstrümanlar 8 seviyeli MEB onaylı programla öğretilmektedir. Gitar'da doğru duruş, temel akorlar ve gam çalışmalarından başlanır; Keman'da Suzuki/Sevcik etütleri, Bateri'de 2/4–8/16 ritimlerden ileri düzey solo çalışmalara kadar ilerlenir.</div>
+      <span class="team-uni">🏅 8 Seviyeli MEB Onaylı Program</span>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background:var(--gold)">🩰</div>
+      <div class="team-name">Dans & Drama Kadrosu</div>
+      <div class="team-role">Bale · Modern Dans · Yaratıcı Drama</div>
+      <div class="team-bio">Bale hazırlık kursu 8 seviyeli Royal-Vaganova metoduyla uygulanmaktadır. 1. seviyeden itibaren temel duruş, yer–bar ve orta hareketleriyle başlanır; ileri seviyelerde parmak ucu (point) çalışmalarına ulaşılır.</div>
+      <span class="team-uni">🎭 Royal-Vaganova Metodu</span>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background:#8b6340">🏺</div>
+      <div class="team-name">Seramik Eğitmeni</div>
+      <div class="team-role">Seramik · Heykel</div>
+      <div class="team-bio">Türkiye'nin ilk MEB onaylı seramik eğitimi. 3 seviyeli programda kırmızı, şamotlu ve döküm kil türleri tanıtılır; fitil ve plaka tekniklerinden kabartma, ajur gibi ileri tekniklere kadar kapsamlı bir süreç izlenir.</div>
+      <span class="team-uni">🏺 Türkiye'de İlk & Tek MEB Onaylı</span>
+    </div>
+  </div>
+</section>
+
+<!-- MEB ONAYI -->
+<section style="padding-top:0">
+  <div class="meb-section">
+    <div class="meb-icon">🏅</div>
+    <h2 class="meb-title">Milli Eğitim Bakanlığı Onaylı</h2>
+    <p class="meb-text">Akademimizin tüm programları Millî Eğitim Bakanlığı tarafından onaylanmış, kademeli müfredatlarla uygulanmaktadır. Her seviye tamamlandığında öğrencilerimize resmi MEB sertifikası verilmektedir.</p>
+    <div class="meb-badges">
+      <div class="meb-badge">🖼️ Resim — 3 Seviye MEB Onaylı</div>
+      <div class="meb-badge">🏺 Seramik — İlk & Tek MEB Onaylı</div>
+      <div class="meb-badge">🎹 Piyano — 8 Seviye MEB Onaylı</div>
+      <div class="meb-badge">🎸 Gitar — 8 Seviye MEB Onaylı</div>
+      <div class="meb-badge">🎻 Keman — 8 Seviye MEB Onaylı</div>
+      <div class="meb-badge">🥁 Bateri — 8 Seviye MEB Onaylı</div>
+      <div class="meb-badge">🪈 Yan Flüt — MEB Onaylı</div>
+      <div class="meb-badge">🎵 Bağlama — MEB Onaylı</div>
+      <div class="meb-badge">🩰 Bale — 8 Seviye MEB Onaylı</div>
+      <div class="meb-badge">💃 Modern Dans — MEB Onaylı</div>
+      <div class="meb-badge">🎭 Yaratıcı Drama — MEB Onaylı</div>
+      <div class="meb-badge">🎓 GS & Konservatuar Hazırlık</div>
+    </div>
+  </div>
+</section>
+
+<!-- KURS PROGRAMLARI ÖZET -->
+<section>
+  <span class="section-tag">Program İçerikleri</span>
+  <h2 class="section-title">Kademeli, Kapsamlı<br>Müfredat Anlayışı</h2>
+  <p style="color:var(--muted);line-height:1.7;max-width:560px;margin-bottom:2.5rem">Her kursumuz kademeli ilerleme prensibine göre tasarlanmıştır. Başlangıç seviyesinden ileri seviyeye kadar her adımda MEB onaylı sertifika verilmektedir.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem">
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px">
+      <div style="font-size:1.6rem;margin-bottom:8px">🖼️</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Resim Kursu — 3 Seviye</div>
+      <div style="font-size:.8rem;color:var(--muted);line-height:1.6">
+        <strong style="color:var(--terracotta)">4–6 yaş:</strong> Renk, doku, çizgi; suluboya/pastel/yağlı boya tanıtımı<br>
+        <strong style="color:var(--terracotta)">7–9 yaş:</strong> Kompozisyon, perspektif gelişimi<br>
+        <strong style="color:var(--terracotta)">10–12 yaş:</strong> Özgün resim, ileri teknikler
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px">
+      <div style="font-size:1.6rem;margin-bottom:8px">🏺</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Seramik Kursu — 3 Seviye</div>
+      <div style="font-size:.8rem;color:var(--muted);line-height:1.6">
+        <strong style="color:var(--terracotta)">4–6 yaş:</strong> Kırmızı, şamotlu, döküm kil; fitil & plaka teknikleri<br>
+        <strong style="color:var(--terracotta)">Orta:</strong> Kabartma, ajur ve özgün form çalışmaları<br>
+        <strong style="color:var(--terracotta)">İleri:</strong> Kompleks teknikler, özgün seramik tasarım
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px">
+      <div style="font-size:1.6rem;margin-bottom:8px">🎸</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Gitar Kursu — 8 Seviye</div>
+      <div style="font-size:.8rem;color:var(--muted);line-height:1.6">
+        <strong style="color:var(--terracotta)">1. Seviye:</strong> Doğru duruş, parmak pozisyonları, temel akorlar, gam & arpej<br>
+        <strong style="color:var(--terracotta)">Orta:</strong> Müzik terimleri, tonal sistemler<br>
+        <strong style="color:var(--terracotta)">İleri:</strong> Klasik eserler, konser repertuvarı
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px">
+      <div style="font-size:1.6rem;margin-bottom:8px">🎻</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Keman Kursu — 8 Seviye</div>
+      <div style="font-size:.8rem;color:var(--muted);line-height:1.6">
+        <strong style="color:var(--terracotta)">1. Seviye:</strong> Kemanın tanıtımı, yay tutuşu, temel gam/arpej, Suzuki & Sevcik etütleri<br>
+        <strong style="color:var(--terracotta)">Orta–İleri:</strong> Konservatuar müfredatına uygun teknik gelişim
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px">
+      <div style="font-size:1.6rem;margin-bottom:8px">🥁</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Bateri Kursu — 8 Seviye</div>
+      <div style="font-size:.8rem;color:var(--muted);line-height:1.6">
+        <strong style="color:var(--terracotta)">1. Seviye:</strong> Temel ritim bilgisi, trampet vuruşları, 2/4–8/16 ritimler<br>
+        <strong style="color:var(--terracotta)">Orta–İleri:</strong> Farklı müzik türleri, ritm varyasyonları, solo çalışmaları
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px">
+      <div style="font-size:1.6rem;margin-bottom:8px">🩰</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Bale Kursu — 8 Seviye</div>
+      <div style="font-size:.8rem;color:var(--muted);line-height:1.6">
+        <strong style="color:var(--terracotta)">1. Seviye:</strong> Royal-Vaganova metodu; temel duruş, yer-bar ve orta hareketleri<br>
+        <strong style="color:var(--terracotta)">Orta:</strong> Orta pozisyon hareketleri<br>
+        <strong style="color:var(--terracotta)">İleri:</strong> Point (parmak ucu) çalışmaları
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:2rem">
+    <a href="dersler.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--terracotta);color:#fff;padding:13px 28px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none">🎓 Tüm Kurs Detayları →</a>
+  </div>
+</section>
+
+<!-- SANAT MARKETİ NOTU -->
+<section style="padding-top:0">
+  <div style="background:linear-gradient(135deg,var(--warm),#ede5d8);border-radius:24px;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+    <div>
+      <span style="display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.5rem">Sanat Marketi</span>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:.5rem">Sanat Malzemeleri de Satıyoruz</h3>
+      <p style="font-size:.88rem;color:var(--muted);line-height:1.7;max-width:420px">Kurslarımızda kullanılan tüm malzemeleri akademimizden temin edebilirsiniz. Çamur (çömlek toprağı) <strong style="color:var(--ink)">₺2.000</strong>, Seramik Yıldız Gökyüzü Bardağı <strong style="color:var(--ink)">₺900</strong> (indirimli) ve daha fazlası.</p>
+    </div>
+    <a href="index.html#market" style="background:var(--terracotta);color:#fff;padding:13px 26px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;white-space:nowrap">🛒 Markete Git →</a>
+  </div>
+</section>
+<section>
+  <span class="section-tag">Vizyonumuz</span>
+  <h2 class="section-title">Değerlerimiz</h2>
+  <div class="values-grid">
+    <div class="value-card"><div class="value-icon">🎯</div><div class="value-title">Bireysel Odak</div><div class="value-text">Her öğrencinin güçlü yönleri ve hızına göre kişiselleştirilmiş eğitim.</div></div>
+    <div class="value-card"><div class="value-icon">🌱</div><div class="value-title">Yaratıcı Gelişim</div><div class="value-text">Teknik bilginin yanı sıra yaratıcı düşünce ve özgün ifade önceliğimizdir.</div></div>
+    <div class="value-card"><div class="value-icon">🤝</div><div class="value-title">Güven & Saygı</div><div class="value-text">Öğrenci, veli ve eğitmen arasında açık iletişim ve karşılıklı saygı.</div></div>
+    <div class="value-card"><div class="value-icon">🏅</div><div class="value-title">Kalite Standartı</div><div class="value-text">MEB onaylı programlar ve uluslararası sanat eğitimi standartları.</div></div>
+    <div class="value-card"><div class="value-icon">♿</div><div class="value-title">Erişilebilirlik</div><div class="value-text">Her yaştan ve seviyeden bireyin sanata ulaşabilmesi için çeşitli programlar.</div></div>
+    <div class="value-card"><div class="value-icon">🌟</div><div class="value-title">Mükemmellik</div><div class="value-text">Öğrencilerimizin potansiyelini en üst düzeye çıkarmak temel hedefimizdir.</div></div>
+  </div>
+</section>
+
+<!-- İLETİŞİM -->
+<section style="padding-top:0">
+  <span class="section-tag">Bize Ulaşın</span>
+  <h2 class="section-title">İletişim Bilgileri</h2>
+  <div class="contact-grid">
+    <div class="contact-card"><div class="contact-icon-wrap">📍</div><div><div class="contact-label">Adres</div><div class="contact-value">1989. Sk. No:25, 07160<br>Muratpaşa/Antalya</div></div></div>
+    <div class="contact-card"><div class="contact-icon-wrap">📞</div><div><div class="contact-label">Telefon</div><div class="contact-value"><a href="tel:+902423247439">+90 (242) 324 74 39</a></div></div></div>
+    <div class="contact-card"><div class="contact-icon-wrap">✉️</div><div><div class="contact-label">E-posta</div><div class="contact-value"><a href="mailto:tamsanatakademi@gmail.com">tamsanatakademi@gmail.com</a></div></div></div>
+    <div class="contact-card"><div class="contact-icon-wrap">📸</div><div><div class="contact-label">Instagram</div><div class="contact-value"><a href="https://instagram.com/tamsanatakademi">@tamsanatakademi</a><br><small style="color:var(--muted)">5.5K+ takipçi</small></div></div></div>
+  </div>
+
+  <div style="border-radius:20px;overflow:hidden;margin-top:2rem;height:300px;border:1px solid var(--border)">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.1!2d30.7133!3d36.8969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c39f8c0e1f1e1f%3A0x0!2zMTk4OS4gU2suIE5vOjI1LCBNdXJhdHBhxZ9hL0FudGFseWE!5e0!3m2!1str!2str!4v1234567890" width="100%" height="300" style="border:0;display:block" allowfullscreen loading="lazy" title="Tam Sanat Akademi"></iframe>
+  </div>
+</section>
+
+<script>
+  function openMobileMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden'}
+  function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow=''}
+</script>
+</body>
+</html>

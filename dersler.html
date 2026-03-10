@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dersler | Tam Sanat Akademi Antalya</title>
+<meta name="description" content="Tam Sanat Akademi'nin tüm kursları: Resim, Seramik, Müzik, Bale, Yaratıcı Drama, Güzel Sanatlar Hazırlık. MEB onaylı sertifika.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208; --cream: #faf6ef; --warm: #f2ebe0;
+    --terracotta: #c4562a; --terracotta-light: #e07050;
+    --gold: #c9972b; --teal: #2a7c7a; --teal-light: #3a9e9b;
+    --text: #2d2416; --muted: #6b5e4e; --border: #e0d4c0;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(250,246,239,0.96); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border); padding: 0 5vw;
+    display: flex; align-items: center; justify-content: space-between; height: 68px;
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); text-decoration: none; line-height: 1.1; }
+  .nav-logo span { color: var(--terracotta); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-active { color: var(--terracotta) !important; font-weight: 600 !important; }
+  .nav-cta { background: var(--terracotta); color: #fff !important; padding: 10px 20px; border-radius: 50px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background .2s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--terracotta-light); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; }
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: var(--cream); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+  .mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--ink); }
+  .btn-primary-nav { background: var(--terracotta); color: #fff !important; padding: 12px 24px; border-radius: 50px; font-size: 1rem !important; font-weight: 700 !important; }
+
+  /* ── SAYFA BAŞLIĞI ── */
+  .page-hero {
+    padding: 120px 5vw 60px;
+    background: linear-gradient(135deg, var(--warm) 0%, var(--cream) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; top: -60px; right: -80px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,86,42,0.07) 0%, transparent 70%);
+  }
+  .breadcrumb { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+  .breadcrumb a { color: var(--terracotta); text-decoration: none; }
+  .page-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: var(--ink); margin-bottom: 1rem; }
+  .page-title em { font-style: italic; color: var(--terracotta); }
+  .page-sub { font-size: 1rem; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+  /* ── KURS FİLTRE ── */
+  .filter-bar {
+    display: flex; gap: 0.75rem; justify-content: center;
+    flex-wrap: wrap; padding: 40px 5vw 0;
+  }
+  .filter-btn {
+    padding: 9px 20px; border-radius: 50px; font-size: 0.82rem; font-weight: 600;
+    cursor: pointer; border: 1.5px solid var(--border); background: #fff;
+    color: var(--muted); transition: all .2s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--terracotta); color: #fff; border-color: var(--terracotta);
+  }
+
+  /* ── KURS DETAY KARTLARI ── */
+  .courses-section { padding: 50px 5vw 80px; }
+  .course-detail { display: none; }
+  .course-detail.show { display: block; }
+
+  .course-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 28px; padding: 50px; margin-bottom: 2rem;
+    position: relative; overflow: hidden;
+  }
+  .course-header::before {
+    content: ''; position: absolute; top: -40px; right: -40px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,86,42,0.06) 0%, transparent 70%);
+  }
+
+  .ch-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(201,151,43,0.12); border: 1px solid rgba(201,151,43,0.25); color: var(--gold); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 20px; margin-bottom: 1rem; }
+  .ch-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--ink); margin-bottom: 0.75rem; line-height: 1.1; }
+  .ch-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+  .ch-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .ch-tag { padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+  .tag-age { background: rgba(42,124,122,0.1); color: var(--teal); }
+  .tag-meb { background: rgba(201,151,43,0.1); color: var(--gold); }
+  .tag-cert { background: rgba(196,86,42,0.1); color: var(--terracotta); }
+
+  .ch-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-enroll { background: var(--terracotta); color: #fff; padding: 13px 24px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: all .2s; box-shadow: 0 4px 16px rgba(196,86,42,0.28); }
+  .btn-enroll:hover { background: var(--terracotta-light); transform: translateY(-1px); }
+  .btn-info { border: 1.5px solid var(--border); color: var(--ink); padding: 12px 22px; border-radius: 50px; font-size: 0.9rem; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: all .2s; }
+  .btn-info:hover { border-color: var(--terracotta); background: rgba(196,86,42,0.04); }
+
+  .ch-visual {
+    border-radius: 20px; aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem; position: relative; overflow: hidden;
+  }
+
+  /* ── YAŞ GRUPLARI TABLOSU ── */
+  .age-table-wrap { background: var(--warm); border-radius: 20px; padding: 32px; margin-bottom: 2rem; }
+  .age-table-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 1.25rem; }
+  .age-table { width: 100%; border-collapse: collapse; }
+  .age-table th { background: var(--terracotta); color: #fff; padding: 12px 16px; font-size: 0.8rem; font-weight: 700; text-align: left; letter-spacing: 0.04em; }
+  .age-table th:first-child { border-radius: 10px 0 0 0; }
+  .age-table th:last-child { border-radius: 0 10px 0 0; }
+  .age-table td { padding: 12px 16px; font-size: 0.85rem; color: var(--text); border-bottom: 1px solid var(--border); }
+  .age-table tr:last-child td { border-bottom: none; }
+  .age-table tr:hover td { background: rgba(196,86,42,0.04); }
+
+  /* ── KAZANIMLAR ── */
+  .gains-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .gain-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 20px; display: flex; align-items: flex-start; gap: 12px; }
+  .gain-icon { width: 36px; height: 36px; border-radius: 9px; background: rgba(196,86,42,0.1); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .gain-text strong { display: block; font-size: 0.85rem; color: var(--ink); margin-bottom: 3px; }
+  .gain-text span { font-size: 0.77rem; color: var(--muted); line-height: 1.4; }
+
+  /* ── GENEL ── */
+  section { padding: 80px 5vw; }
+  .section-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 1rem; }
+  .wa-sticky { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 58px; height: 58px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 6px 24px rgba(37,211,102,0.45); text-decoration: none; animation: pulse-wa 2.5s ease-in-out infinite; }
+  @keyframes pulse-wa { 0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.45)}50%{box-shadow:0 6px 36px rgba(37,211,102,.7)} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)} }
+  .fade-in { animation: fadeUp 0.5s ease both; }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: var(--ink); border-radius: 24px; padding: 40px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap; margin: 0 0 60px;
+  }
+  .cta-band h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #fff; }
+  .cta-band p { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-top: 4px; }
+  .btn-cta-white { background: #fff; color: var(--terracotta); padding: 13px 26px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; text-decoration: none; white-space: nowrap; transition: transform .2s; }
+  .btn-cta-white:hover { transform: translateY(-2px); }
+
+  @media (max-width: 900px) {
+    .course-header { grid-template-columns: 1fr; gap: 2rem; padding: 32px; }
+    .ch-visual { display: none; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 600px) {
+    .courses-section { padding: 30px 5vw 60px; }
+    .course-header { padding: 24px; }
+    .age-table-wrap { padding: 20px; overflow-x: auto; }
+    .gains-grid { grid-template-columns: 1fr 1fr; }
+    .cta-band { flex-direction: column; padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/902423247439" class="wa-sticky" title="WhatsApp" aria-label="WhatsApp">💬</a>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+  <a href="index.html" onclick="closeMobileMenu()">Ana Sayfa</a>
+  <a href="dersler.html" onclick="closeMobileMenu()">Dersler</a>
+  <a href="satis.html" onclick="closeMobileMenu()">Fiyatlar</a>
+  <a href="hakkimizda.html" onclick="closeMobileMenu()">Hakkımızda</a>
+  <a href="galeri.html" onclick="closeMobileMenu()">Galeri</a>
+  <a href="satis.html#kayit-form" class="btn-primary-nav" onclick="closeMobileMenu()">Kayıt Ol</a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Tam <span>Sanat</span><br>Akademi</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="dersler.html" class="nav-active">Dersler</a></li>
+    <li><a href="satis.html">Fiyatlar</a></li>
+    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="galeri.html">Galeri</a></li>
+  </ul>
+  <a href="satis.html#kayit-form" class="nav-cta">Ücretsiz Deneme →</a>
+  <div class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- SAYFA BAŞLIĞI -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Ana Sayfa</a> → Dersler</div>
+  <h1 class="page-title">Tüm <em>Kurslarımız</em></h1>
+  <p class="page-sub">Resimden müziğe, baleden seramiğe — MEB onaylı sertifikalı, 3 yaştan yetişkine her yaş için programlarımız.</p>
+</div>
+
+<!-- FİLTRE -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterCourse('all', this)">Tümü</button>
+  <button class="filter-btn" onclick="filterCourse('gorsel', this)">🎨 Görsel Sanatlar</button>
+  <button class="filter-btn" onclick="filterCourse('muzik', this)">🎵 Müzik</button>
+  <button class="filter-btn" onclick="filterCourse('sahne', this)">🎭 Sahne Sanatları</button>
+  <button class="filter-btn" onclick="filterCourse('hazirlik', this)">🎓 Hazırlık</button>
+</div>
+
+<!-- KURSLAR -->
+<div class="courses-section">
+
+  <!-- RESİM -->
+  <div class="course-detail show fade-in" data-cat="gorsel" id="c-resim">
+    <div class="course-header">
+      <div>
+        <div class="ch-badge">🎨 Görsel Sanatlar</div>
+        <h2 class="ch-title">Resim Kursu</h2>
+        <p class="ch-desc">Temel çizim tekniklerinden akademik resme uzanan kapsamlı program. Öğrencinin yaş grubuna ve seviyesine özel müfredat ile her bireyin potansiyeli ortaya çıkarılır.</p>
+        <div class="ch-tags">
+          <span class="ch-tag tag-age">👶 5 yaş – Yetişkin</span>
+          <span class="ch-tag tag-meb">🏅 MEB Onaylı</span>
+          <span class="ch-tag tag-cert">📜 Sertifika</span>
+        </div>
+        <div class="ch-actions">
+          <a href="https://wa.me/902423247439?text=Resim%20kursu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll">✨ Kayıt Ol</a>
+          <a href="satis.html" class="btn-info">💰 Fiyat Gör</a>
+        </div>
+      </div>
+      <div class="ch-visual" style="background:linear-gradient(135deg,#f5e8d8,#e0c090)">🖼️</div>
+    </div>
+
+    <div class="age-table-wrap">
+      <div class="age-table-title">📋 Yaş Grupları & Program İçeriği</div>
+      <table class="age-table">
+        <thead><tr><th>Yaş Grubu</th><th>Program Odağı</th><th>Haftalık Ders</th><th>Kazanım</th></tr></thead>
+        <tbody>
+          <tr><td>5–9 yaş</td><td>Şema öncesi dönem, temel teknik ve renk eğitimi</td><td>2 ders / hf</td><td>Temel çizim becerileri</td></tr>
+          <tr><td>10–14 yaş</td><td>Görsel hafıza, 3. boyut algısı, perspektif</td><td>2 ders / hf</td><td>Hacimli çizim, kompozisyon</td></tr>
+          <tr><td>15+ yaş</td><td>Akademik düzeyde resim, karakalem ve yağlı boya</td><td>2–3 ders / hf</td><td>Teknik yetkinlik</td></tr>
+          <tr><td>Güzel Sanatlar Hazırlık</td><td>Lise/Fakülte sınav odaklı yoğun program</td><td>3–4 ders / hf</td><td>Sınav başarısı</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="gains-grid">
+      <div class="gain-card"><div class="gain-icon">✏️</div><div class="gain-text"><strong>Karakalem Tekniği</strong><span>Gölge, ışık ve doku çalışmaları</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🎨</div><div class="gain-text"><strong>Yağlı & Akrilik Boya</strong><span>Renk teorisi ve uygulama</span></div></div>
+      <div class="gain-card"><div class="gain-icon">👁️</div><div class="gain-text"><strong>Gözlem Yeteneği</strong><span>Görsel hafıza ve perspektif</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🏅</div><div class="gain-text"><strong>MEB Sertifikası</strong><span>Her seviye tamamlamada resmi belge</span></div></div>
+    </div>
+  </div>
+
+  <!-- SERAMİK -->
+  <div class="course-detail show fade-in" data-cat="gorsel" id="c-seramik">
+    <div class="course-header">
+      <div>
+        <div class="ch-badge">🏺 Görsel Sanatlar</div>
+        <h2 class="ch-title">Seramik Kursu</h2>
+        <p class="ch-desc">Türkiye'nin ilk ve tek MEB onaylı seramik eğitimi. Çamur işleme, tornalama, sırlama ve pişirme aşamalarıyla tam bir seramik deneyimi. 4 yaştan yetişkine özel gruplar.</p>
+        <div class="ch-tags">
+          <span class="ch-tag tag-age">👶 4 yaş – Yetişkin</span>
+          <span class="ch-tag tag-meb">🏅 İlk & Tek MEB Onaylı</span>
+          <span class="ch-tag tag-cert">📜 Sertifika + Malzeme</span>
+        </div>
+        <div class="ch-actions">
+          <a href="https://wa.me/902423247439?text=Seramik%20kursu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll">✨ Kayıt Ol</a>
+          <a href="satis.html" class="btn-info">💰 Fiyat Gör</a>
+        </div>
+      </div>
+      <div class="ch-visual" style="background:linear-gradient(135deg,#e8d5c8,#d4a87c)">🏺</div>
+    </div>
+
+    <div class="age-table-wrap">
+      <div class="age-table-title">📋 Yaş Grupları & Program İçeriği</div>
+      <table class="age-table">
+        <thead><tr><th>Yaş Grubu</th><th>Program Odağı</th><th>Haftalık Ders</th><th>Özellik</th></tr></thead>
+        <tbody>
+          <tr><td>4–5 yaş</td><td>Dokunsal keşif, çamurla oyun ve şekillendirme</td><td>1–2 ders / hf</td><td>Eğlenceli giriş</td></tr>
+          <tr><td>6–10 yaş</td><td>Temel seramik formlar, sırlama teknikleri</td><td>2 ders / hf</td><td>Yaratıcı geliştirme</td></tr>
+          <tr><td>11–18 yaş</td><td>Torna çalışması, ileri teknikler, kişisel proje</td><td>2 ders / hf</td><td>Teknik ilerleme</td></tr>
+          <tr><td>Yetişkin</td><td>Tam seramik süreci, galeri kalitesinde eserler</td><td>2 ders / hf</td><td>MEB Sertifikalı</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="gains-grid">
+      <div class="gain-card"><div class="gain-icon">🤲</div><div class="gain-text"><strong>El Becerisi</strong><span>İnce motor beceri gelişimi</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🔄</div><div class="gain-text"><strong>Tornalama</strong><span>Elektrikli torna uygulaması</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🎨</div><div class="gain-text"><strong>Sırlama & Pişirme</strong><span>Tam seramik üretim süreci</span></div></div>
+      <div class="gain-card"><div class="gain-icon">📦</div><div class="gain-text"><strong>Malzeme Dahil</strong><span>Tüm malzemeler ücrete dahildir</span></div></div>
+    </div>
+  </div>
+
+  <!-- MÜZİK -->
+  <div class="course-detail show fade-in" data-cat="muzik" id="c-muzik">
+    <div class="course-header">
+      <div>
+        <div class="ch-badge">🎵 Müzik</div>
+        <h2 class="ch-title">Müzik Kursları</h2>
+        <p class="ch-desc">Piyano, gitar, keman, bateri, yan flüt, bağlama ve daha fazlası. Birebir veya grup dersleri seçeneğiyle her yaşa ve seviyeye uygun müzik eğitimi. Her seviye tamamlamada MEB onaylı sertifika.</p>
+        <div class="ch-tags">
+          <span class="ch-tag tag-age">🎶 Tüm Yaşlar</span>
+          <span class="ch-tag tag-meb">🏅 Her Seviyede MEB Sertifika</span>
+          <span class="ch-tag tag-cert">👤 Birebir veya Grup</span>
+        </div>
+        <div class="ch-actions">
+          <a href="https://wa.me/902423247439?text=M%C3%BCzik%20kursu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll">✨ Kayıt Ol</a>
+          <a href="satis.html" class="btn-info">💰 Fiyat Gör</a>
+        </div>
+      </div>
+      <div class="ch-visual" style="background:linear-gradient(135deg,#d8e8f0,#a0c8e8)">🎵</div>
+    </div>
+
+    <div class="age-table-wrap">
+      <div class="age-table-title">🎸 Enstrüman Seçenekleri</div>
+      <table class="age-table">
+        <thead><tr><th>Enstrüman</th><th>Başlangıç Yaşı</th><th>Ders Tipi</th><th>Seviyeler</th></tr></thead>
+        <tbody>
+          <tr><td>🎹 Piyano</td><td>5 yaş+</td><td>Birebir</td><td>Başlangıç → İleri</td></tr>
+          <tr><td>🎸 Gitar</td><td>7 yaş+</td><td>Birebir / Grup</td><td>Başlangıç → İleri</td></tr>
+          <tr><td>🎻 Keman</td><td>5 yaş+</td><td>Birebir</td><td>Başlangıç → İleri</td></tr>
+          <tr><td>🥁 Bateri</td><td>8 yaş+</td><td>Birebir</td><td>Başlangıç → İleri</td></tr>
+          <tr><td>🪈 Yan Flüt</td><td>8 yaş+</td><td>Birebir / Grup</td><td>Başlangıç → Orta</td></tr>
+          <tr><td>🎵 Bağlama</td><td>10 yaş+</td><td>Birebir / Grup</td><td>Başlangıç → İleri</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="gains-grid">
+      <div class="gain-card"><div class="gain-icon">👂</div><div class="gain-text"><strong>Kulak Eğitimi</strong><span>Ritim ve melodi duygusu</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🎼</div><div class="gain-text"><strong>Nota Okuma</strong><span>Teori ve pratik bir arada</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🎤</div><div class="gain-text"><strong>Sahne Deneyimi</strong><span>Yıl sonu konser katılımı</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🏅</div><div class="gain-text"><strong>Her Seviye Sertifika</strong><span>MEB onaylı resmi belge</span></div></div>
+    </div>
+  </div>
+
+  <!-- BALE -->
+  <div class="course-detail show fade-in" data-cat="sahne" id="c-bale">
+    <div class="course-header">
+      <div>
+        <div class="ch-badge">🩰 Sahne Sanatları</div>
+        <h2 class="ch-title">Bale & Modern Dans</h2>
+        <p class="ch-desc">3 yaşından itibaren başlayan hazırlık programından ileri seviyeye kadar kapsamlı bale ve modern dans eğitimi. Disiplin, esneklik ve sahnede var olma becerileri.</p>
+        <div class="ch-tags">
+          <span class="ch-tag tag-age">👶 3 yaş – İleri Seviye</span>
+          <span class="ch-tag tag-meb">🏅 MEB Onaylı</span>
+          <span class="ch-tag tag-cert">🎭 Yıl Sonu Gösteri</span>
+        </div>
+        <div class="ch-actions">
+          <a href="https://wa.me/902423247439?text=Bale%20kursu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll">✨ Kayıt Ol</a>
+          <a href="satis.html" class="btn-info">💰 Fiyat Gör</a>
+        </div>
+      </div>
+      <div class="ch-visual" style="background:linear-gradient(135deg,#f0d8e8,#e8a0c0)">🩰</div>
+    </div>
+
+    <div class="age-table-wrap">
+      <div class="age-table-title">📋 Yaş Grupları & Seviyeler</div>
+      <table class="age-table">
+        <thead><tr><th>Yaş / Seviye</th><th>Program İçeriği</th><th>Haftalık Ders</th><th>Kazanım</th></tr></thead>
+        <tbody>
+          <tr><td>3–5 yaş (Hazırlık)</td><td>Ritim, koordinasyon, dans oyunları</td><td>1–2 ders / hf</td><td>Müzik-hareket uyumu</td></tr>
+          <tr><td>6–10 yaş (Temel)</td><td>Bale pozisyonları, barre çalışması</td><td>2 ders / hf</td><td>Teknik temel</td></tr>
+          <tr><td>11–15 yaş (Orta)</td><td>Repertuvar, varyasyon, partnering</td><td>2–3 ders / hf</td><td>Sahne becerileri</td></tr>
+          <tr><td>İleri Seviye</td><td>Pointe çalışması, gösteri hazırlığı</td><td>3+ ders / hf</td><td>Sahne performansı</td></tr>
+          <tr><td>Modern Dans</td><td>Contemporary, jazz, serbest hareket</td><td>2 ders / hf</td><td>Yaratıcı ifade</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="gains-grid">
+      <div class="gain-card"><div class="gain-icon">🤸</div><div class="gain-text"><strong>Esneklik & Denge</strong><span>Fiziksel gelişim ve postür</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🎭</div><div class="gain-text"><strong>Sahne Varlığı</strong><span>Özgüven ve sahne deneyimi</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🎵</div><div class="gain-text"><strong>Müzikalite</strong><span>Ritim ve müzik duygusu</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🏅</div><div class="gain-text"><strong>MEB Sertifikası</strong><span>Resmi onaylı belge</span></div></div>
+    </div>
+  </div>
+
+  <!-- YARATICI DRAMA -->
+  <div class="course-detail show fade-in" data-cat="sahne" id="c-drama">
+    <div class="course-header">
+      <div>
+        <div class="ch-badge">🎭 Sahne Sanatları</div>
+        <h2 class="ch-title">Yaratıcı Drama</h2>
+        <p class="ch-desc">Drama, doğaçlama ve tiyatro çalışmalarıyla özgüven, empati ve iletişim becerilerini geliştiren program. Konservatuar hazırlık çalışmaları da dahildir.</p>
+        <div class="ch-tags">
+          <span class="ch-tag tag-age">🧒 Çocuk & Genç</span>
+          <span class="ch-tag tag-meb">🏅 MEB Onaylı</span>
+          <span class="ch-tag tag-cert">🎬 Konservatuar Hazırlık</span>
+        </div>
+        <div class="ch-actions">
+          <a href="https://wa.me/902423247439?text=Yarat%C4%B1c%C4%B1%20drama%20kursu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll">✨ Kayıt Ol</a>
+          <a href="satis.html" class="btn-info">💰 Fiyat Gör</a>
+        </div>
+      </div>
+      <div class="ch-visual" style="background:linear-gradient(135deg,#d8ead8,#a0c8a0)">🎭</div>
+    </div>
+
+    <div class="gains-grid">
+      <div class="gain-card"><div class="gain-icon">💬</div><div class="gain-text"><strong>İletişim Becerileri</strong><span>Kendini ifade etme gücü</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🤝</div><div class="gain-text"><strong>Empati & Takım Ruhu</strong><span>Sosyal beceri gelişimi</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🧠</div><div class="gain-text"><strong>Yaratıcı Düşünce</strong><span>Problem çözme ve hayal gücü</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🎓</div><div class="gain-text"><strong>Konservatuar Hazırlık</strong><span>Sınav odaklı çalışma</span></div></div>
+    </div>
+  </div>
+
+  <!-- GÜZEL SANATLAR HAZIRLIK -->
+  <div class="course-detail show fade-in" data-cat="hazirlik" id="c-hazirlik">
+    <div class="course-header">
+      <div>
+        <div class="ch-badge">🎓 Hazırlık Programı</div>
+        <h2 class="ch-title">Güzel Sanatlar Hazırlık</h2>
+        <p class="ch-desc">Güzel Sanatlar Lisesi ve Fakültesi giriş sınavlarına hazırlık için yoğun ve odaklı program. Akademik çizim, portfolio oluşturma ve sınav stratejisi.</p>
+        <div class="ch-tags">
+          <span class="ch-tag tag-age">🎓 Lise & Üniversite Adayları</span>
+          <span class="ch-tag tag-meb">🏅 MEB Onaylı</span>
+          <span class="ch-tag tag-cert">📁 Portfolio Desteği</span>
+        </div>
+        <div class="ch-actions">
+          <a href="https://wa.me/902423247439?text=G%C3%BCzel%20Sanatlar%20haz%C4%B1rl%C4%B1k%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll">✨ Kayıt Ol</a>
+          <a href="satis.html" class="btn-info">💰 Fiyat Gör</a>
+        </div>
+      </div>
+      <div class="ch-visual" style="background:linear-gradient(135deg,#e8e0d8,#c8b890)">🎓</div>
+    </div>
+
+    <div class="gains-grid">
+      <div class="gain-card"><div class="gain-icon">✏️</div><div class="gain-text"><strong>Akademik Çizim</strong><span>Sınav formatına uygun teknikler</span></div></div>
+      <div class="gain-card"><div class="gain-icon">📁</div><div class="gain-text"><strong>Portfolio Hazırlık</strong><span>Güçlü ve özgün eserler</span></div></div>
+      <div class="gain-card"><div class="gain-icon">🎯</div><div class="gain-text"><strong>Sınav Stratejisi</strong><span>Zaman yönetimi ve tekrar</span></div></div>
+      <div class="gain-card"><div class="gain-icon">👤</div><div class="gain-text"><strong>Bireysel Mentörlük</strong><span>Bire bir takip ve rehberlik</span></div></div>
+    </div>
+  </div>
+
+  <!-- ALT CTA -->
+  <div class="cta-band">
+    <div>
+      <h3>Hangi kursa katılacağınıza karar veremediniz mi?</h3>
+      <p>Bizi arayın, sizi doğru programa yönlendirelim. İlk ders ücretsiz!</p>
+    </div>
+    <a href="satis.html#kayit-form" class="btn-cta-white">✨ Ücretsiz Deneme Dersi</a>
+  </div>
+
+</div><!-- /courses-section -->
+
+<script>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+
+  function filterCourse(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.course-detail').forEach(el => {
+      if (cat === 'all' || el.dataset.cat === cat) {
+        el.classList.add('show');
+        el.style.animation = 'none';
+        el.offsetHeight;
+        el.style.animation = 'fadeUp 0.4s ease both';
+      } else {
+        el.classList.remove('show');
+      }
+    });
+  }
+</script>
+</body>
+</html>

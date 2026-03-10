@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tam Sanat Akademi | Antalya'nın MEB Onaylı Sanat Okulu</title>
+<meta name="description" content="Antalya Tam Sanat Akademi – Resim, Seramik, Müzik, Bale, Yaratıcı Drama kursları. MEB onaylı sertifika. Ücretsiz deneme dersi için hemen kayıt olun.">
+<meta name="keywords" content="Antalya sanat kursu, Antalya resim kursu, MEB onaylı sanat eğitimi Antalya, seramik kursu Antalya, müzik kursu Antalya, bale kursu Antalya">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --cream: #faf6ef;
+    --warm: #f2ebe0;
+    --terracotta: #c4562a;
+    --terracotta-light: #e07050;
+    --gold: #c9972b;
+    --teal: #2a7c7a;
+    --teal-light: #3a9e9b;
+    --text: #2d2416;
+    --muted: #6b5e4e;
+    --border: #e0d4c0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(250,246,239,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    line-height: 1.1;
+  }
+  .nav-logo span { color: var(--terracotta); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-active { color: var(--terracotta) !important; font-weight: 600 !important; }
+
+  .nav-cta {
+    background: var(--terracotta);
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--terracotta-light); transform: translateY(-1px); }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: all .3s;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 90px 5vw 60px;
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -150px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,86,42,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(42,124,122,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,151,43,0.12);
+    border: 1px solid rgba(201,151,43,0.3);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+    animation: fadeUp 0.7s ease 0.1s both;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.7s ease 0.2s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.7s ease 0.3s both;
+  }
+
+  .btn-primary {
+    background: var(--terracotta);
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background .2s, transform .15s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(196,86,42,0.3);
+  }
+  .btn-primary:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196,86,42,0.35); }
+
+  .btn-secondary {
+    border: 1.5px solid var(--border);
+    color: var(--ink);
+    padding: 15px 26px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: border-color .2s, background .2s;
+  }
+  .btn-secondary:hover { border-color: var(--terracotta); background: rgba(196,86,42,0.04); }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    animation: fadeUp 0.7s ease 0.4s both;
+  }
+  .stat { text-align: left; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 3px; }
+
+  .hero-visual {
+    position: relative;
+    animation: fadeIn 1s ease 0.3s both;
+  }
+
+  .hero-img-wrap {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: var(--warm);
+  }
+
+  .hero-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Placeholder art canvas */
+  .hero-canvas {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e8ddd0 0%, #d4c5b0 50%, #c8b89a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-canvas::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 30% 40%, rgba(196,86,42,0.25) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 70%, rgba(42,124,122,0.2) 0%, transparent 50%);
+  }
+
+  .hero-float-card {
+    position: absolute;
+    bottom: -20px;
+    left: -30px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 12px 40px rgba(26,18,8,0.12);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
+    animation: floatCard 3s ease-in-out infinite;
+  }
+
+  .float-icon {
+    width: 44px; height: 44px;
+    background: rgba(201,151,43,0.12);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .float-text strong { font-size: 0.875rem; color: var(--ink); display: block; }
+  .float-text span { font-size: 0.75rem; color: var(--muted); }
+
+  .hero-badge-top {
+    position: absolute;
+    top: 20px; right: -10px;
+    background: var(--teal);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.3;
+    box-shadow: 0 8px 24px rgba(42,124,122,0.3);
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--ink);
+    padding: 18px 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .trust-icon {
+    width: 32px; height: 32px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 5vw; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  /* ── COURSES ── */
+  .courses-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .course-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(26,18,8,0.1);
+  }
+
+  .course-thumb {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .course-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.08));
+  }
+
+  .thumb-resim    { background: linear-gradient(135deg, #f5e8d8, #e8c9a0); }
+  .thumb-seramik  { background: linear-gradient(135deg, #e8d5c8, #d4a87c); }
+  .thumb-muzik    { background: linear-gradient(135deg, #d8e8f0, #a0c8e8); }
+  .thumb-bale     { background: linear-gradient(135deg, #f0d8e8, #e8a0c0); }
+  .thumb-drama    { background: linear-gradient(135deg, #d8ead8, #a0c8a0); }
+  .thumb-hazirlik { background: linear-gradient(135deg, #e8e0d8, #c8b890); }
+
+  .course-body { padding: 20px; }
+
+  .course-ages {
+    display: inline-block;
+    background: var(--warm);
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  .course-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .course-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .course-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  .course-meb {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--teal);
+  }
+
+  .course-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* ── WHY US ── */
+  .why-section {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 32px;
+    padding: 70px 6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin: 0 3vw;
+  }
+
+  .why-section .section-tag { color: var(--gold); }
+  .why-section .section-title { color: #fff; }
+  .why-section .section-sub { color: rgba(255,255,255,0.6); }
+
+  .why-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .why-feat {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 20px;
+    transition: background .2s;
+  }
+  .why-feat:hover { background: rgba(255,255,255,0.09); }
+
+  .why-feat-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .why-feat strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .why-feat p { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+  .why-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .why-stat-row {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .big-stat {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 28px 24px;
+    flex: 1;
+    text-align: center;
+  }
+
+  .big-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--terracotta-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .big-stat-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+  .why-quote {
+    background: rgba(201,151,43,0.12);
+    border: 1px solid rgba(201,151,43,0.2);
+    border-radius: 20px;
+    padding: 24px;
+  }
+  .why-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .why-quote-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .author-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+  }
+  .author-info strong { display: block; font-size: 0.82rem; color: #fff; }
+  .author-info span { font-size: 0.73rem; color: rgba(255,255,255,0.5); }
+  .stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 8px; }
+
+  /* ── AGE GROUPS ── */
+  .age-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .age-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .age-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(26,18,8,0.08); }
+
+  .age-emoji { font-size: 2.5rem; margin-bottom: 10px; }
+  .age-range {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--terracotta);
+    margin-bottom: 4px;
+  }
+  .age-label { font-size: 0.82rem; color: var(--muted); font-weight: 500; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .testi-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+  }
+
+  .testi-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 12px; }
+  .testi-text {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .testi-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #fff;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .testi-name { font-size: 0.875rem; font-weight: 600; color: var(--ink); }
+  .testi-role { font-size: 0.75rem; color: var(--muted); }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--terracotta) 0%, #a03d1e 100%);
+    border-radius: 32px;
+    padding: 70px 6vw;
+    margin: 0 3vw;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    pointer-events: none;
+  }
+  .cta-section::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    pointer-events: none;
+  }
+
+  .cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .cta-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-white {
+    background: #fff;
+    color: var(--terracotta);
+    padding: 16px 30px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
+
+  .btn-ghost {
+    border: 2px solid rgba(255,255,255,0.4);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: border-color .2s, background .2s;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.1); }
+
+  /* ── CONTACT INFO ── */
+  .contact-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--warm);
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+  .contact-icon {
+    width: 40px; height: 40px;
+    background: var(--terracotta);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .contact-label { font-size: 0.72rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .contact-value { font-size: 0.875rem; font-weight: 600; color: var(--ink); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.6);
+    padding: 50px 5vw 30px;
+    margin-top: 0;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 30px;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .footer-logo span { color: var(--terracotta-light); }
+  .footer-desc { font-size: 0.83rem; line-height: 1.7; max-width: 240px; }
+
+  .footer-col h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-col ul a {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .footer-col ul a:hover { color: var(--terracotta-light); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.78rem;
+  }
+
+  .social-links { display: flex; gap: 10px; }
+  .social-link {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: rgba(255,255,255,0.6);
+    transition: background .2s, color .2s;
+  }
+  .social-link:hover { background: var(--terracotta); color: #fff; }
+
+  /* ── WHATSAPP STICKY ── */
+  .wa-sticky {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    width: 58px; height: 58px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+    animation: pulse-wa 2.5s ease-in-out infinite;
+  }
+  .wa-sticky:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.55); }
+
+  /* ── MAP PLACEHOLDER ── */
+  .map-wrap {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 2rem;
+    height: 300px;
+    background: var(--warm);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--muted);
+  }
+  .map-wrap span { font-size: 2.5rem; }
+  .map-wrap p { font-size: 0.875rem; font-weight: 500; }
+  .map-wrap small { font-size: 0.78rem; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes pulse-wa {
+    0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.45); }
+    50% { box-shadow: 0 6px 36px rgba(37,211,102,0.7); }
+  }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: var(--cream);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .mobile-menu a:hover { color: var(--terracotta); }
+  .mobile-close {
+    position: absolute;
+    top: 20px; right: 24px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--ink);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 80px; text-align: center; }
+    .hero-sub { max-width: 100%; }
+    .hero-actions { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .hero-visual { display: none; }
+    .why-section { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 60px 5vw; }
+    .why-section, .cta-section { margin: 0 1vw; padding: 50px 5vw; }
+    .trust-bar { gap: 1.5rem; }
+    .why-features { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .hero-stats { gap: 1.5rem; }
+    .stat-num { font-size: 1.4rem; }
+    .why-stat-row { flex-direction: column; }
+  }
+
+  /* ── SATIŞ / FİYATLANDIRMA ── */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .pricing-card {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 24px;
+    padding: 32px 28px;
+    position: relative;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .pricing-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(26,18,8,0.1); }
+  .pricing-card.featured {
+    border-color: var(--terracotta);
+    box-shadow: 0 8px 32px rgba(196,86,42,0.15);
+  }
+
+  .pricing-badge {
+    position: absolute;
+    top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--terracotta);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .pricing-icon { font-size: 2.2rem; margin-bottom: 12px; }
+  .pricing-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .pricing-age { font-size: 0.75rem; color: var(--muted); font-weight: 600; margin-bottom: 16px; }
+
+  .pricing-price {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--terracotta);
+    line-height: 1;
+  }
+  .price-unit { font-size: 0.82rem; color: var(--muted); margin-bottom: 4px; }
+  .price-note { font-size: 0.75rem; color: var(--muted); margin-bottom: 18px; }
+
+  .pricing-features { list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 8px; }
+  .pricing-features li {
+    font-size: 0.85rem;
+    color: var(--text);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+  }
+  .pricing-features li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .pricing-divider { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+
+  .btn-enroll {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all .2s;
+  }
+  .btn-enroll-primary {
+    background: var(--terracotta);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(196,86,42,0.3);
+  }
+  .btn-enroll-primary:hover { background: var(--terracotta-light); transform: translateY(-1px); }
+  .btn-enroll-outline {
+    background: transparent;
+    color: var(--terracotta);
+    border: 1.5px solid var(--terracotta);
+  }
+  .btn-enroll-outline:hover { background: rgba(196,86,42,0.06); }
+
+  /* ── KAYIT FORMU ── */
+  .form-section {
+    background: var(--warm);
+    border-radius: 32px;
+    margin: 0 3vw;
+    padding: 70px 6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .form-wrap {
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px 36px;
+    box-shadow: 0 8px 40px rgba(26,18,8,0.08);
+  }
+
+  .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .form-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; line-height: 1.6; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--cream);
+    transition: border-color .2s, box-shadow .2s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 3px rgba(196,86,42,0.1);
+    background: #fff;
+  }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+
+  .form-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--terracotta);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s, transform .15s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(196,86,42,0.3);
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .form-submit:hover { background: var(--terracotta-light); transform: translateY(-2px); }
+
+  .form-note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 32px;
+  }
+  .form-success.show { display: block; }
+  .form-success-icon { font-size: 3rem; margin-bottom: 12px; }
+  .form-success h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .form-success p { font-size: 0.875rem; color: var(--muted); }
+
+  .form-left-info { display: flex; flex-direction: column; gap: 2rem; }
+  .form-left-info .section-tag { margin-bottom: 0; }
+
+  .form-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .form-benefit-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(196,86,42,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .form-benefit strong { display: block; font-size: 0.9rem; color: var(--ink); margin-bottom: 3px; }
+  .form-benefit p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+  /* ── GALERİ ── */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 12px;
+    margin-top: 2.5rem;
+  }
+
+  .gallery-item {
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    background: var(--warm);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s;
+  }
+  .gallery-item:hover { transform: scale(1.02); }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+  .gallery-item.wide { grid-column: span 2; aspect-ratio: 2/1; }
+  .gallery-item.tall { grid-row: span 2; aspect-ratio: 1/2; }
+
+  .gallery-placeholder {
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 2.5rem;
+  }
+  .gallery-placeholder span { font-size: 0.7rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .gp-1 { background: linear-gradient(135deg, #f5e8d8, #e0c090); }
+  .gp-2 { background: linear-gradient(135deg, #d8e8e8, #90c0c0); }
+  .gp-3 { background: linear-gradient(135deg, #f0d8f0, #c090c0); }
+  .gp-4 { background: linear-gradient(135deg, #d8f0d8, #90c090); }
+  .gp-5 { background: linear-gradient(135deg, #f8e8d0, #d0a878); }
+  .gp-6 { background: linear-gradient(135deg, #d8e0f8, #9090d8); }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26,18,8,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .3s;
+    border-radius: 16px;
+  }
+  .gallery-overlay span { color: #fff; font-size: 0.85rem; font-weight: 600; }
+
+  /* ── SANAT MARKET ── */
+  .market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+  }
+
+  .market-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .market-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(26,18,8,0.1); }
+
+  .market-thumb {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    position: relative;
+  }
+  .mt-1 { background: linear-gradient(135deg, #f8efe4, #e8d0b0); }
+  .mt-2 { background: linear-gradient(135deg, #e4f0f8, #b0d0e8); }
+  .mt-3 { background: linear-gradient(135deg, #f8e4e4, #e8b0b0); }
+  .mt-4 { background: linear-gradient(135deg, #e4f8e4, #b0e8b0); }
+  .mt-5 { background: linear-gradient(135deg, #f8f4e4, #e8d8a0); }
+  .mt-6 { background: linear-gradient(135deg, #f0e4f8, #c8a8e0); }
+
+  .market-body { padding: 14px; }
+  .market-name { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+  .market-desc { font-size: 0.75rem; color: var(--muted); margin-bottom: 12px; line-height: 1.4; }
+  .market-footer { display: flex; align-items: center; justify-content: space-between; }
+  .market-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--terracotta); }
+  .market-btn {
+    background: var(--terracotta);
+    color: #fff;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .market-btn:hover { background: var(--terracotta-light); }
+
+  /* ── CART MINI ── */
+  .cart-float {
+    position: fixed;
+    top: 80px; right: 20px;
+    z-index: 998;
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 24px rgba(26,18,8,0.3);
+    transition: transform .2s;
+    text-decoration: none;
+  }
+  .cart-float.visible { display: flex; }
+  .cart-float:hover { transform: scale(1.05); }
+  .cart-count {
+    background: var(--terracotta);
+    color: #fff;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  /* RESPONSIVE EKLEMELER */
+  @media (max-width: 900px) {
+    .form-section { grid-template-columns: 1fr; gap: 2rem; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item.wide { grid-column: span 2; }
+    .gallery-item.tall { grid-row: span 1; aspect-ratio: 1; }
+  }
+  @media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+    .form-wrap { padding: 28px 20px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .market-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP STICKY -->
+<a href="https://wa.me/902423247439" class="wa-sticky" title="WhatsApp ile Yazın" aria-label="WhatsApp">💬</a>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+  <a href="index.html" onclick="closeMobileMenu()">Ana Sayfa</a>
+  <a href="dersler.html" onclick="closeMobileMenu()">Dersler</a>
+  <a href="satis.html" onclick="closeMobileMenu()">Fiyatlar</a>
+  <a href="hakkimizda.html" onclick="closeMobileMenu()">Hakkımızda</a>
+  <a href="galeri.html" onclick="closeMobileMenu()">Galeri</a>
+  <a href="satis.html#kayit-form" class="btn-primary" onclick="closeMobileMenu()">Kayıt Ol</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Tam <span>Sanat</span><br>Akademi</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="nav-active">Ana Sayfa</a></li>
+    <li><a href="dersler.html">Dersler</a></li>
+    <li><a href="satis.html">Fiyatlar</a></li>
+    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="galeri.html">Galeri</a></li>
+  </ul>
+  <a href="satis.html#kayit-form" class="nav-cta">Ücretsiz Deneme Dersi →</a>
+  <div class="hamburger" onclick="openMobileMenu()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🏅 MEB Onaylı Sertifikalı Eğitim</div>
+    <h1 class="hero-title">
+      Sanatla Büyü,<br>
+      <em>Yeteneğini</em> Keşfet.
+    </h1>
+    <p class="hero-sub">
+      Antalya'nın en kapsamlı sanat akademisinde resim, seramik, müzik, bale ve daha fazlası. 
+      3 yaşından yetişkine kadar herkes için MEB onaylı programlar.
+    </p>
+    <div class="hero-actions">
+      <a href="#kayit" class="btn-primary">✨ Ücretsiz Deneme Dersi Al</a>
+      <a href="#kurslar" class="btn-secondary">Kursları Gör →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">2020</div>
+        <div class="stat-label">Kuruluş Yılı</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5.5K+</div>
+        <div class="stat-label">Instagram Takipçisi</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4.8★</div>
+        <div class="stat-label">Öğrenci Puanı</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-img-wrap">
+      <div class="hero-canvas">
+        <div style="font-size:5rem;position:relative;z-index:1">🎨</div>
+      </div>
+      <!-- Gerçek foto: <img src="hero-atölye.jpg" alt="Tam Sanat Akademi atölyesi"> -->
+    </div>
+    <div class="hero-badge-top">🏅 MEB<br>Onaylı</div>
+    <div class="hero-float-card">
+      <div class="float-icon">🎓</div>
+      <div class="float-text">
+        <strong>Sertifika Garantisi</strong>
+        <span>Her kurs tamamlamada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">🏛️</div>
+    MEB Onaylı Kurum
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">👶</div>
+    3 Yaştan Yetişkine
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🎨</div>
+    10+ Farklı Kurs
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">📜</div>
+    Resmi Sertifika
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">⭐</div>
+    4.8 Puan (Yandex)
+  </div>
+</div>
+
+<!-- COURSES -->
+<section id="kurslar">
+  <div class="courses-header">
+    <div>
+      <span class="section-tag">Eğitim Programları</span>
+      <h2 class="section-title">Hangi Sanatı<br>Keşfetmek İstersin?</h2>
+    </div>
+    <div class="section-sub" style="max-width:360px">
+      MEB onaylı sertifika programlarıyla her yaş ve seviyeye uygun kurslar sunuyoruz.
+    </div>
+  </div>
+
+  <div class="courses-grid">
+
+    <a href="#kayit" class="course-card">
+      <div class="course-thumb thumb-resim">🖼️</div>
+      <div class="course-body">
+        <div class="course-ages">5 – 18+ yaş</div>
+        <div class="course-name">Resim Kursu</div>
+        <div class="course-desc">Temel çizimden akademik resme, Güzel Sanatlar hazırlığa uzanan kapsamlı program. 5-9, 10-14, 15+ yaş grupları.</div>
+        <div class="course-footer">
+          <div class="course-meb">✅ MEB Onaylı</div>
+          <div class="course-link">Detay →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="#kayit" class="course-card">
+      <div class="course-thumb thumb-seramik">🏺</div>
+      <div class="course-body">
+        <div class="course-ages">4 yaş – Yetişkin</div>
+        <div class="course-name">Seramik Kursu</div>
+        <div class="course-desc">Türkiye'nin ilk ve tek MEB sertifikalı seramik eğitimi. 4-5, 6-10, 11-18 yaş ve yetişkin grupları.</div>
+        <div class="course-footer">
+          <div class="course-meb">✅ MEB Onaylı</div>
+          <div class="course-link">Detay →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="#kayit" class="course-card">
+      <div class="course-thumb thumb-muzik">🎵</div>
+      <div class="course-body">
+        <div class="course-ages">Tüm yaşlar</div>
+        <div class="course-name">Müzik Kursları</div>
+        <div class="course-desc">Piyano, gitar, keman, bateri, yan flüt, bağlama. Birebir veya grup dersleri, tüm seviyelere sertifika.</div>
+        <div class="course-footer">
+          <div class="course-meb">✅ MEB Onaylı</div>
+          <div class="course-link">Detay →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="#kayit" class="course-card">
+      <div class="course-thumb thumb-bale">🩰</div>
+      <div class="course-body">
+        <div class="course-ages">3 yaş – İleri</div>
+        <div class="course-name">Bale & Modern Dans</div>
+        <div class="course-desc">3 yaşından başlayan hazırlık programından ileri seviyeye. Bale ve modern dans, her düzey için.</div>
+        <div class="course-footer">
+          <div class="course-meb">✅ MEB Onaylı</div>
+          <div class="course-link">Detay →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="#kayit" class="course-card">
+      <div class="course-thumb thumb-drama">🎭</div>
+      <div class="course-body">
+        <div class="course-ages">Çocuk – Genç</div>
+        <div class="course-name">Yaratıcı Drama</div>
+        <div class="course-desc">Drama ve tiyatro çalışmalarıyla özgüven, iletişim ve yaratıcılık. Konservatuar hazırlık desteği.</div>
+        <div class="course-footer">
+          <div class="course-meb">✅ MEB Onaylı</div>
+          <div class="course-link">Detay →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="#kayit" class="course-card">
+      <div class="course-thumb thumb-hazirlik">🎓</div>
+      <div class="course-body">
+        <div class="course-ages">Lise / Üniversite</div>
+        <div class="course-name">Güzel Sanatlar Hazırlık</div>
+        <div class="course-desc">Güzel Sanatlar Lisesi ve Fakültesi sınav hazırlığı. Akademik düzeyde çizim ve portfolio çalışması.</div>
+        <div class="course-footer">
+          <div class="course-meb">✅ MEB Onaylı</div>
+          <div class="course-link">Detay →</div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="hakkimizda" style="padding-top:0">
+  <div class="why-section">
+    <div>
+      <span class="section-tag">Neden Tam Sanat?</span>
+      <h2 class="section-title" style="margin-bottom:1rem">Sanat ile Buluşmanın<br><em style="font-style:italic;color:var(--terracotta-light)">TAM</em> Adresi</h2>
+      <p style="color:rgba(255,255,255,0.55);line-height:1.7;font-size:0.95rem;margin-bottom:1.5rem">
+        2020'den bu yana Antalya Muratpaşa'da, Mehmet Bilgin (Marmara Üniversitesi Görsel Sanatlar Öğretmeni) liderliğinde uzman eğitmenlerle hizmet veriyoruz.
+      </p>
+      <div class="why-features">
+        <div class="why-feat">
+          <div class="why-feat-icon" style="background:rgba(196,86,42,0.2)">🏅</div>
+          <strong>MEB Onaylı Sertifika</strong>
+          <p>Her kurs sonunda resmi, devlet onaylı belge</p>
+        </div>
+        <div class="why-feat">
+          <div class="why-feat-icon" style="background:rgba(201,151,43,0.2)">👶</div>
+          <strong>Her Yaşa Uygun</strong>
+          <p>3 yaşından yetişkine özel programlar</p>
+        </div>
+        <div class="why-feat">
+          <div class="why-feat-icon" style="background:rgba(58,158,155,0.2)">🎓</div>
+          <strong>Uzman Eğitmenler</strong>
+          <p>Alanında uzman, deneyimli kadro</p>
+        </div>
+        <div class="why-feat">
+          <div class="why-feat-icon" style="background:rgba(255,255,255,0.1)">🏺</div>
+          <strong>İlk & Tek</strong>
+          <p>MEB onaylı seramik kursu Antalya'da</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-right">
+      <div class="why-stat-row">
+        <div class="big-stat">
+          <div class="big-stat-num">4.8</div>
+          <div class="big-stat-lbl">Yandex Puanı ⭐</div>
+        </div>
+        <div class="big-stat">
+          <div class="big-stat-num">5.5K</div>
+          <div class="big-stat-lbl">Instagram Takipçisi</div>
+        </div>
+      </div>
+      <div class="why-quote">
+        <div class="stars">★★★★★</div>
+        <p>"Çocuğum 3 yıldır burada. Eğitmenler bilgili ve iletişim becerileri çok yüksek. Hem çocuk hem yetişkinler için harika bir ortam."</p>
+        <div class="why-quote-author">
+          <div class="author-avatar">A</div>
+          <div class="author-info">
+            <strong>Ayşe K.</strong>
+            <span>Veli — Yandex Haritalar Yorumu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGE GROUPS -->
+<section>
+  <div style="text-align:center;margin-bottom:0.5rem">
+    <span class="section-tag">Yaş Grupları</span>
+    <h2 class="section-title">Her Yaş İçin<br>Özel Program</h2>
+  </div>
+  <div class="age-groups">
+    <div class="age-card">
+      <div class="age-emoji">👶</div>
+      <div class="age-range">3–5</div>
+      <div class="age-label">Bale Hazırlık &<br>Seramik</div>
+    </div>
+    <div class="age-card">
+      <div class="age-emoji">🧒</div>
+      <div class="age-range">5–9</div>
+      <div class="age-label">Temel Resim &<br>Müzik Giriş</div>
+    </div>
+    <div class="age-card">
+      <div class="age-emoji">👦</div>
+      <div class="age-range">10–14</div>
+      <div class="age-label">Görsel Sanatlar &<br>Enstrüman</div>
+    </div>
+    <div class="age-card">
+      <div class="age-emoji">🧑</div>
+      <div class="age-range">15–18</div>
+      <div class="age-label">Akademik Resim &<br>Hazırlık</div>
+    </div>
+    <div class="age-card">
+      <div class="age-emoji">🧑‍🎨</div>
+      <div class="age-range">18+</div>
+      <div class="age-label">Yetişkin Hobi &<br>Seramik</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="yorumlar" style="background:var(--warm);border-radius:32px;margin:0 3vw">
+  <span class="section-tag">Öğrenci Yorumları</span>
+  <h2 class="section-title">Onlar Söylüyor</h2>
+  <div class="testimonials-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Kızım 4 yıldır resim kursu alıyor. Hem eğitmenler hem ortam muhteşem. MEB sertifikasını aldığında ne kadar mutlu oldu anlatamam."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:var(--terracotta)">Z</div>
+        <div>
+          <div class="testi-name">Zeynep M.</div>
+          <div class="testi-role">Veli · Resim Kursu</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Seramik kursunu bitirince gerçekten gurur duydum. Antalya'da bu alanda MEB onaylı tek yer olduklarını öğrenince tercih etmiştim. Doğru karar."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:var(--teal)">M</div>
+        <div>
+          <div class="testi-name">Mehmet A.</div>
+          <div class="testi-role">Öğrenci · Seramik Kursu</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Oğlum gitar dersiyle başladı, şimdi bale sınıfına da gidiyor. Eğitmenler gerçekten sabırlı ve ilgili. Çevreme herkese tavsiye ediyorum."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:var(--gold)">S</div>
+        <div>
+          <div class="testi-name">Selin K.</div>
+          <div class="testi-role">Veli · Gitar & Bale</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FİYATLANDIRMA & SATIŞ
+═══════════════════════════════════════════════ -->
+<section id="fiyatlar">
+  <div style="text-align:center;margin-bottom:0.5rem">
+    <span class="section-tag">Kurs Ücretleri</span>
+    <h2 class="section-title">Şeffaf Fiyatlar,<br>Sertifikalı Eğitim</h2>
+    <p class="section-sub" style="margin:0.75rem auto 0;text-align:center">Tüm kurslarımız MEB onaylı sertifika ile tamamlanır. Detaylı bilgi için WhatsApp'tan ulaşabilirsiniz.</p>
+  </div>
+
+  <div class="pricing-grid">
+
+    <div class="pricing-card">
+      <div class="pricing-icon">🖼️</div>
+      <div class="pricing-name">Resim Kursu</div>
+      <div class="pricing-age">5–9 / 10–14 / 15+ yaş grupları</div>
+      <div class="pricing-price">
+        <span class="price-amount">₺1.200</span>
+        <span class="price-unit">/ ay</span>
+      </div>
+      <div class="price-note">Haftalık 2 ders · Aylık 8 ders</div>
+      <ul class="pricing-features">
+        <li>Karakalem & yağlı boya teknikleri</li>
+        <li>Yaş grubuna özel müfredat</li>
+        <li>Güzel Sanatlar hazırlık seçeneği</li>
+        <li>MEB onaylı sertifika</li>
+      </ul>
+      <hr class="pricing-divider">
+      <a href="https://wa.me/902423247439?text=Resim%20kursu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll btn-enroll-outline">💬 Bilgi Al & Kayıt Ol</a>
+    </div>
+
+    <div class="pricing-card featured">
+      <div class="pricing-badge">🏆 En Popüler</div>
+      <div class="pricing-icon">🏺</div>
+      <div class="pricing-name">Seramik Kursu</div>
+      <div class="pricing-age">4–5 / 6–10 / 11–18 / Yetişkin</div>
+      <div class="pricing-price">
+        <span class="price-amount">₺1.400</span>
+        <span class="price-unit">/ ay</span>
+      </div>
+      <div class="price-note">Haftalık 2 ders · Malzeme dahil</div>
+      <ul class="pricing-features">
+        <li>Türkiye'nin ilk MEB onaylı seramik</li>
+        <li>Tüm malzemeler kursa dahil</li>
+        <li>4 yaştan yetişkine özel program</li>
+        <li>MEB onaylı sertifika</li>
+        <li>Ücretsiz deneme dersi</li>
+      </ul>
+      <hr class="pricing-divider">
+      <a href="https://wa.me/902423247439?text=Seramik%20kursu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll btn-enroll-primary">✨ Hemen Kayıt Ol</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-icon">🎵</div>
+      <div class="pricing-name">Müzik Kursları</div>
+      <div class="pricing-age">Tüm yaşlar · Tüm seviyeler</div>
+      <div class="pricing-price">
+        <span class="price-amount">₺1.300</span>
+        <span class="price-unit">/ ay</span>
+      </div>
+      <div class="price-note">Birebir veya grup · Enstrüman seçimli</div>
+      <ul class="pricing-features">
+        <li>Piyano, gitar, keman, bateri</li>
+        <li>Yan flüt, bağlama seçenekleri</li>
+        <li>Birebir veya grup ders imkânı</li>
+        <li>Her seviye için MEB sertifikası</li>
+      </ul>
+      <hr class="pricing-divider">
+      <a href="https://wa.me/902423247439?text=M%C3%BCzik%20kursu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll btn-enroll-outline">💬 Bilgi Al & Kayıt Ol</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-icon">🩰</div>
+      <div class="pricing-name">Bale & Modern Dans</div>
+      <div class="pricing-age">3 yaş – İleri Seviye</div>
+      <div class="pricing-price">
+        <span class="price-amount">₺1.100</span>
+        <span class="price-unit">/ ay</span>
+      </div>
+      <div class="price-note">Haftalık 2 ders · Kostüm hariç</div>
+      <ul class="pricing-features">
+        <li>3 yaştan başlayan hazırlık programı</li>
+        <li>Bale ve modern dans seçenekleri</li>
+        <li>Küçük gruplarla kişisel ilgi</li>
+        <li>MEB onaylı sertifika</li>
+      </ul>
+      <hr class="pricing-divider">
+      <a href="https://wa.me/902423247439?text=Bale%20kursu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll btn-enroll-outline">💬 Bilgi Al & Kayıt Ol</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-icon">🎭</div>
+      <div class="pricing-name">Yaratıcı Drama</div>
+      <div class="pricing-age">Çocuk & Genç grupları</div>
+      <div class="pricing-price">
+        <span class="price-amount">₺1.000</span>
+        <span class="price-unit">/ ay</span>
+      </div>
+      <div class="price-note">Haftalık 2 ders · Konservatuar hazırlık</div>
+      <ul class="pricing-features">
+        <li>Drama, tiyatro, doğaçlama</li>
+        <li>Özgüven ve iletişim geliştirme</li>
+        <li>Konservatuar sınav hazırlığı</li>
+        <li>MEB onaylı sertifika</li>
+      </ul>
+      <hr class="pricing-divider">
+      <a href="https://wa.me/902423247439?text=Yarat%C4%B1c%C4%B1%20drama%20kursu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll btn-enroll-outline">💬 Bilgi Al & Kayıt Ol</a>
+    </div>
+
+    <div class="pricing-card" style="background:var(--ink);border-color:var(--ink)">
+      <div class="pricing-icon">🎓</div>
+      <div class="pricing-name" style="color:#fff">Güzel Sanatlar Hazırlık</div>
+      <div class="pricing-age" style="color:rgba(255,255,255,0.5)">Lise & Üniversite adayları</div>
+      <div class="pricing-price">
+        <span class="price-amount" style="color:var(--terracotta-light)">₺1.600</span>
+        <span class="price-unit" style="color:rgba(255,255,255,0.5)">/ ay</span>
+      </div>
+      <div class="price-note" style="color:rgba(255,255,255,0.5)">Yoğun program · Portfolio hazırlık</div>
+      <ul class="pricing-features" style="color:rgba(255,255,255,0.75)">
+        <li>Akademik düzeyde çizim eğitimi</li>
+        <li>Lise & fakülte sınav stratejisi</li>
+        <li>Portfolio oluşturma desteği</li>
+        <li>Bireysel takip & mentörlük</li>
+      </ul>
+      <hr class="pricing-divider" style="border-color:rgba(255,255,255,0.1)">
+      <a href="https://wa.me/902423247439?text=G%C3%BCzel%20Sanatlar%20haz%C4%B1rl%C4%B1k%20kursu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-enroll btn-enroll-primary">✨ Hemen Kayıt Ol</a>
+    </div>
+
+  </div>
+
+  <!-- Taksit Notu -->
+  <div style="background:rgba(42,124,122,0.07);border:1px solid rgba(42,124,122,0.2);border-radius:16px;padding:20px 24px;margin-top:2rem;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+    <span style="font-size:1.5rem">💳</span>
+    <div>
+      <strong style="font-size:0.9rem;color:var(--ink)">Taksit İmkânı Mevcut</strong>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:2px">Kredi kartıyla 3 taksit seçeneği, iyzico güvencesiyle. Detaylar için <a href="https://wa.me/902423247439" style="color:var(--teal);font-weight:600">WhatsApp'tan</a> ulaşın.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     GALERİ
+═══════════════════════════════════════════════ -->
+<section id="galeri" style="background:var(--warm);border-radius:32px;margin:0 3vw">
+  <span class="section-tag">Öğrenci Çalışmaları</span>
+  <h2 class="section-title">Atölyemizden<br>Kareler</h2>
+  <p class="section-sub">Öğrencilerimizin yarattığı eserler ve akademimizden anlık görüntüler.</p>
+
+  <div class="gallery-grid">
+    <div class="gallery-item wide gp-1">
+      <div class="gallery-placeholder">🖼️<span>Resim Atölyesi</span></div>
+      <div class="gallery-overlay"><span>🔍 Büyüt</span></div>
+    </div>
+    <div class="gallery-item gp-2">
+      <div class="gallery-placeholder">🏺<span>Seramik</span></div>
+      <div class="gallery-overlay"><span>🔍 Büyüt</span></div>
+    </div>
+    <div class="gallery-item gp-3">
+      <div class="gallery-placeholder">🩰<span>Bale</span></div>
+      <div class="gallery-overlay"><span>🔍 Büyüt</span></div>
+    </div>
+    <div class="gallery-item gp-4">
+      <div class="gallery-placeholder">🎭<span>Drama</span></div>
+      <div class="gallery-overlay"><span>🔍 Büyüt</span></div>
+    </div>
+    <div class="gallery-item gp-5">
+      <div class="gallery-placeholder">🎸<span>Müzik</span></div>
+      <div class="gallery-overlay"><span>🔍 Büyüt</span></div>
+    </div>
+    <div class="gallery-item wide gp-6">
+      <div class="gallery-placeholder">🎨<span>Öğrenci Sergisi</span></div>
+      <div class="gallery-overlay"><span>🔍 Büyüt</span></div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:2rem">
+    <a href="https://www.instagram.com/tamsanatakademi" target="_blank" class="btn-secondary" style="display:inline-flex">📸 Instagram'da Daha Fazlasını Gör</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SANAT MARKETİ
+═══════════════════════════════════════════════ -->
+<section id="market">
+  <span class="section-tag">Sanat Marketi</span>
+  <h2 class="section-title">Sanat Malzemeleri<br>Kapında</h2>
+  <p class="section-sub">Akademimizde kullandığımız kaliteli malzemeleri online olarak sipariş verebilirsiniz. WhatsApp'tan stok sorgulayabilirsiniz.</p>
+
+  <div class="market-grid">
+    <div class="market-card">
+      <div class="market-thumb mt-1">🏺</div>
+      <div class="market-body">
+        <div class="market-name">Çamur (Çömlek Toprağı)</div>
+        <div class="market-desc">Seramik derslerinde kullanılan profesyonel çömlek toprağı</div>
+        <div class="market-footer">
+          <div class="market-price">₺2.000</div>
+          <a href="https://wa.me/902423247439?text=%C3%87amur%20%28%C3%A7%C3%B6mlek%20topra%C4%9F%C4%B1%29%20sipari%C5%9Fi%20vermek%20istiyorum." class="market-btn">Sipariş Ver</a>
+        </div>
+      </div>
+    </div>
+    <div class="market-card">
+      <div class="market-thumb mt-2" style="position:relative">
+        <span style="position:absolute;top:8px;right:8px;background:var(--terracotta);color:#fff;font-size:.65rem;font-weight:700;padding:3px 8px;border-radius:10px">İNDİRİM</span>
+        ⭐
+      </div>
+      <div class="market-body">
+        <div class="market-name">Seramik Yıldız Gökyüzü Bardağı</div>
+        <div class="market-desc">El yapımı öğrenci eseri seramik bardak</div>
+        <div class="market-footer">
+          <div>
+            <div class="market-price">₺900</div>
+            <div style="font-size:.7rem;color:var(--muted);text-decoration:line-through">₺1.000</div>
+          </div>
+          <a href="https://wa.me/902423247439?text=Seramik%20Y%C4%B1ld%C4%B1z%20G%C3%B6ky%C3%BCz%C3%BC%20Barda%C4%9F%C4%B1%20sipari%C5%9Fi%20vermek%20istiyorum." class="market-btn">Sipariş Ver</a>
+        </div>
+      </div>
+    </div>
+    <div class="market-card">
+      <div class="market-thumb mt-3">✏️</div>
+      <div class="market-body">
+        <div class="market-name">Karakalem Seti</div>
+        <div class="market-desc">12 farklı sertlikte karakalem + silgi set</div>
+        <div class="market-footer">
+          <div class="market-price">₺160</div>
+          <a href="https://wa.me/902423247439?text=Karakalem%20seti%20sipari%C5%9Fi%20vermek%20istiyorum." class="market-btn">Sipariş Ver</a>
+        </div>
+      </div>
+    </div>
+    <div class="market-card">
+      <div class="market-thumb mt-4">📒</div>
+      <div class="market-body">
+        <div class="market-name">Eskiz Defteri</div>
+        <div class="market-desc">A4 200gr kalın yapraklı eskiz defteri</div>
+        <div class="market-footer">
+          <div class="market-price">₺95</div>
+          <a href="https://wa.me/902423247439?text=Eskiz%20defteri%20sipari%C5%9Fi%20vermek%20istiyorum." class="market-btn">Sipariş Ver</a>
+        </div>
+      </div>
+    </div>
+    <div class="market-card">
+      <div class="market-thumb mt-5">🖼️</div>
+      <div class="market-body">
+        <div class="market-name">Tuval Seti (3'lü)</div>
+        <div class="market-desc">30x40 cm hazır gerilmiş tuval, 3 adet</div>
+        <div class="market-footer">
+          <div class="market-price">₺175</div>
+          <a href="https://wa.me/902423247439?text=Tuval%20seti%20sipari%C5%9Fi%20vermek%20istiyorum." class="market-btn">Sipariş Ver</a>
+        </div>
+      </div>
+    </div>
+    <div class="market-card">
+      <div class="market-thumb mt-6">🎒</div>
+      <div class="market-body">
+        <div class="market-name">Başlangıç Paketi</div>
+        <div class="market-desc">Yeni başlayanlar için tam donanımlı set</div>
+        <div class="market-footer">
+          <div class="market-price">₺490</div>
+          <a href="https://wa.me/902423247439?text=Ba%C5%9Flang%C4%B1%C3%A7%20paketi%20sipari%C5%9Fi%20vermek%20istiyorum." class="market-btn">Sipariş Ver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:rgba(201,151,43,0.08);border:1px solid rgba(201,151,43,0.2);border-radius:16px;padding:20px 24px;margin-top:2rem;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+    <span style="font-size:1.5rem">🚚</span>
+    <div>
+      <strong style="font-size:0.9rem;color:var(--ink)">Antalya İçi Ücretsiz Teslimat</strong>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:2px">₺500 üzeri siparişlerde Antalya içi ücretsiz kargo. Akademiden teslim alma seçeneği de mevcuttur.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     KAYIT FORMU
+═══════════════════════════════════════════════ -->
+<section id="kayit-form" style="padding:60px 5vw">
+  <div class="form-section">
+    <div class="form-left-info">
+      <div>
+        <span class="section-tag">Ücretsiz Deneme Dersi</span>
+        <h2 class="section-title" style="margin-bottom:1rem">İlk Dersin<br><em style="font-style:italic;color:var(--terracotta)">Tamamen Ücretsiz!</em></h2>
+        <p style="font-size:0.9rem;color:var(--muted);line-height:1.7">Hangi kursa ilgi duyduğunu söyle, biz seni doğru programa ve eğitmene yönlendirelim.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1.2rem">
+        <div class="form-benefit">
+          <div class="form-benefit-icon">🎯</div>
+          <div>
+            <strong>Kişisel Yönlendirme</strong>
+            <p>Yaşa ve ilgi alanına göre en uygun kurs önerisi alırsın</p>
+          </div>
+        </div>
+        <div class="form-benefit">
+          <div class="form-benefit-icon" style="background:rgba(42,124,122,0.1)">📞</div>
+          <div>
+            <strong>48 Saat İçinde Dönüş</strong>
+            <p>Formunu doldur, seni en kısa sürede arayalım</p>
+          </div>
+        </div>
+        <div class="form-benefit">
+          <div class="form-benefit-icon" style="background:rgba(201,151,43,0.1)">🏅</div>
+          <div>
+            <strong>MEB Onaylı Sertifika</strong>
+            <p>Kursu tamamlayınca resmi sertifikanı al</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--warm);border-radius:16px;padding:20px">
+        <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Veya Hemen Ulaşın</div>
+        <a href="tel:+902423247439" style="display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:10px">
+          <span style="font-size:1.2rem">📞</span>
+          <span style="font-size:0.9rem;font-weight:600;color:var(--ink)">+90 (242) 324 74 39</span>
+        </a>
+        <a href="https://wa.me/902423247439" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+          <span style="font-size:1.2rem">💬</span>
+          <span style="font-size:0.9rem;font-weight:600;color:var(--ink)">WhatsApp'tan Yaz</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="form-wrap">
+      <div id="formContent">
+        <div class="form-title">Kayıt Formu</div>
+        <div class="form-sub">Bilgilerini doldur, seni en kısa sürede arayalım. Tamamen ücretsiz!</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ad *</label>
+            <input type="text" id="fname" placeholder="Adınız">
+          </div>
+          <div class="form-group">
+            <label>Soyad *</label>
+            <input type="text" id="lname" placeholder="Soyadınız">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Telefon *</label>
+          <input type="tel" id="phone" placeholder="0(5XX) XXX XX XX">
+        </div>
+
+        <div class="form-group">
+          <label>E-posta</label>
+          <input type="email" id="email" placeholder="ornek@mail.com">
+        </div>
+
+        <div class="form-group">
+          <label>İlgilendiğiniz Kurs *</label>
+          <select id="course">
+            <option value="">— Kurs Seçin —</option>
+            <option>Resim Kursu</option>
+            <option>Seramik Kursu</option>
+            <option>Piyano Kursu</option>
+            <option>Gitar Kursu</option>
+            <option>Keman Kursu</option>
+            <option>Bateri Kursu</option>
+            <option>Bale Kursu</option>
+            <option>Modern Dans Kursu</option>
+            <option>Yaratıcı Drama</option>
+            <option>Güzel Sanatlar Hazırlık</option>
+            <option>Konservatuar Hazırlık</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Yaş / Yaş Grubu</label>
+            <select id="agegroup">
+              <option value="">— Yaş Seçin —</option>
+              <option>3–5 yaş</option>
+              <option>5–9 yaş</option>
+              <option>10–14 yaş</option>
+              <option>15–18 yaş</option>
+              <option>Yetişkin (18+)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tercih Edilen Gün</label>
+            <select id="day">
+              <option value="">— Gün Seçin —</option>
+              <option>Pazartesi</option>
+              <option>Salı</option>
+              <option>Çarşamba</option>
+              <option>Perşembe</option>
+              <option>Cuma</option>
+              <option>Cumartesi</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Mesajınız (İsteğe bağlı)</label>
+          <textarea id="message" placeholder="Sormak istediğiniz bir şey var mı?"></textarea>
+        </div>
+
+        <button class="form-submit" onclick="submitForm()">
+          ✨ Ücretsiz Deneme Dersi İste
+        </button>
+        <div class="form-note">🔒 Bilgileriniz gizli tutulur · Spam gönderilmez</div>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">🎉</div>
+        <h3>Başvurunuz Alındı!</h3>
+        <p>En geç 48 saat içinde sizi arayacağız.<br>WhatsApp'tan da ulaşabilirsiniz:</p>
+        <a href="https://wa.me/902423247439" class="btn-primary" style="display:inline-flex;margin-top:16px">💬 WhatsApp'ta Yaz</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="kayit" style="padding:60px 5vw">
+  <div class="cta-section">
+    <h2 class="cta-title">Ücretsiz Deneme Dersi<br>Rezervasyonu Yap</h2>
+    <p class="cta-sub">Hangi kursa ilgi duyduğunu söyle, biz seni doğru programa yönlendirelim. İlk ders tamamen ücretsiz!</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/902423247439?text=Merhaba%2C%20%C3%BCcretsiz%20deneme%20dersi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-white">💬 WhatsApp ile Kayıt</a>
+      <a href="tel:+902423247439" class="btn-ghost">📞 +90 (242) 324 74 39</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="iletisim">
+  <span class="section-tag">Bize Ulaşın</span>
+  <h2 class="section-title">İletişim Bilgileri</h2>
+  <div class="contact-bar">
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-label">Adres</div>
+        <div class="contact-value">1989. Sk. No:25, 07160<br>Muratpaşa/Antalya</div>
+      </div>
+    </div>
+    <a href="tel:+902423247439" class="contact-item" style="text-decoration:none">
+      <div class="contact-icon">📞</div>
+      <div>
+        <div class="contact-label">Telefon</div>
+        <div class="contact-value">+90 (242) 324 74 39</div>
+      </div>
+    </a>
+    <a href="mailto:tamsanatakademi@gmail.com" class="contact-item" style="text-decoration:none">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <div class="contact-label">E-posta</div>
+        <div class="contact-value">tamsanatakademi@gmail.com</div>
+      </div>
+    </a>
+    <a href="https://www.instagram.com/tamsanatakademi" class="contact-item" style="text-decoration:none">
+      <div class="contact-icon">📸</div>
+      <div>
+        <div class="contact-label">Instagram</div>
+        <div class="contact-value">@tamsanatakademi<br><small style="color:var(--muted)">5.5K+ takipçi</small></div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Google Maps Embed -->
+  <div style="border-radius:20px;overflow:hidden;margin-top:2rem;height:320px;border:1px solid var(--border)">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.1!2d30.7133!3d36.8969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c39f8c0e1f1e1f%3A0x0!2zMTk4OS4gU2suIE5vOjI1LCBNdXJhdHBhxZ9hL0FudGFseWE!5e0!3m2!1str!2str!4v1234567890"
+      width="100%" height="320" style="border:0;display:block" allowfullscreen loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Tam Sanat Akademi Konum">
+    </iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Tam <span>Sanat</span> Akademi</div>
+      <p class="footer-desc">"Sanat ile buluşmanın TAM adresi." — Antalya Muratpaşa'da MEB onaylı sanat eğitimi. 2020'den bu yana.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Kurslar</h4>
+      <ul>
+        <li><a href="#kayit-form">Resim Kursu</a></li>
+        <li><a href="#kayit-form">Seramik Kursu</a></li>
+        <li><a href="#kayit-form">Müzik Kursları</a></li>
+        <li><a href="#kayit-form">Bale & Dans</a></li>
+        <li><a href="#kayit-form">Yaratıcı Drama</a></li>
+        <li><a href="#kayit-form">GS Hazırlık</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Akademi</h4>
+      <ul>
+        <li><a href="#hakkimizda">Hakkımızda</a></li>
+        <li><a href="#fiyatlar">Fiyatlar</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#market">Sanat Marketi</a></li>
+        <li><a href="#yorumlar">Öğrenci Yorumları</a></li>
+        <li><a href="#kayit-form">Kayıt Ol</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>İletişim</h4>
+      <ul>
+        <li><a href="tel:+902423247439">+90 (242) 324 74 39</a></li>
+        <li><a href="mailto:tamsanatakademi@gmail.com">tamsanatakademi@gmail.com</a></li>
+        <li><a href="#">1989. Sk. No:25, Muratpaşa</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 Antalya Tam Sanat Akademi. Tüm hakları saklıdır.</span>
+    <div class="social-links">
+      <a href="#" class="social-link" title="Instagram">📸</a>
+      <a href="#" class="social-link" title="Facebook">👥</a>
+      <a href="#" class="social-link" title="YouTube">▶️</a>
+      <a href="https://wa.me/902423247439" class="social-link" title="WhatsApp">💬</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function openMobileMenu() {
+    document.getElementById('mobileMenu').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function submitForm() {
+    const fname = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const course = document.getElementById('course').value;
+
+    if (!fname || !phone || !course) {
+      alert('Lütfen Ad, Telefon ve Kurs alanlarını doldurun.');
+      return;
+    }
+
+    const lname = document.getElementById('lname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const agegroup = document.getElementById('agegroup').value;
+    const day = document.getElementById('day').value;
+    const message = document.getElementById('message').value.trim();
+
+    // WhatsApp mesajı oluştur
+    const msg = encodeURIComponent(
+      `Merhaba! Web sitesinden kayıt formu doldurdum.\n\n` +
+      `Ad Soyad: ${fname} ${lname}\n` +
+      `Telefon: ${phone}\n` +
+      (email ? `E-posta: ${email}\n` : '') +
+      `Kurs: ${course}\n` +
+      (agegroup ? `Yaş Grubu: ${agegroup}\n` : '') +
+      (day ? `Tercih Edilen Gün: ${day}\n` : '') +
+      (message ? `\nNot: ${message}` : '')
+    );
+
+    // Formu gizle, başarı mesajı göster
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+
+    // WhatsApp'a yönlendir (yeni sekme)
+    setTimeout(() => {
+      window.open(`https://wa.me/902423247439?text=${msg}`, '_blank');
+    }, 800);
+  }
+
+  // Smooth scroll offset for fixed nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeUp 0.6s ease both';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.course-card, .age-card, .testi-card, .why-feat, .big-stat, .contact-item').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>

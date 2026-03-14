@@ -163,6 +163,24 @@
     .gains-grid { grid-template-columns: 1fr 1fr; }
     .cta-band { flex-direction: column; padding: 28px 24px; }
   }
+
+  /* FOOTER */
+  footer{background:var(--ink,#1a1208);color:rgba(255,255,255,.75);padding:44px 5vw 20px}
+  .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+  .footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+  .footer-logo span{color:#e07050}
+  .footer-desc{font-size:.78rem;line-height:1.7;color:rgba(255,255,255,.5)}
+  .footer-col h4{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:.8rem}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+  .footer-col a{font-size:.78rem;color:rgba(255,255,255,.48);text-decoration:none;transition:color .2s}
+  .footer-col a:hover{color:#e07050}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+  .footer-bottom span{font-size:.72rem;color:rgba(255,255,255,.35)}
+  .social-links{display:flex;gap:.6rem}
+  .social-link{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.85rem;transition:background .2s}
+  .social-link:hover{background:#c4562a}
+  @media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.footer-top{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -173,9 +191,10 @@
   <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
   <a href="index.html" onclick="closeMobileMenu()">Ana Sayfa</a>
   <a href="dersler.html" onclick="closeMobileMenu()">Dersler</a>
-  <a href="satis.html" onclick="closeMobileMenu()">Fiyatlar</a>
+  <a href="satis.html" onclick="closeMobileMenu()">💰 Satış Sayfası</a>
   <a href="hakkimizda.html" onclick="closeMobileMenu()">Hakkımızda</a>
   <a href="galeri.html" onclick="closeMobileMenu()">Galeri</a>
+  <a href="market.html" onclick="closeMobileMenu()">🛒 Market</a>
   <a href="satis.html#kayit-form" class="btn-primary-nav" onclick="closeMobileMenu()">Kayıt Ol</a>
 </div>
 
@@ -184,9 +203,10 @@
   <ul class="nav-links">
     <li><a href="index.html">Ana Sayfa</a></li>
     <li><a href="dersler.html" class="nav-active">Dersler</a></li>
-    <li><a href="satis.html">Fiyatlar</a></li>
+    <li><a href="satis.html">Satış & Fiyatlar</a></li>
     <li><a href="hakkimizda.html">Hakkımızda</a></li>
     <li><a href="galeri.html">Galeri</a></li>
+    <li><a href="market.html">🛒 Market</a></li>
   </ul>
   <a href="satis.html#kayit-form" class="nav-cta">Ücretsiz Deneme →</a>
   <div class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></div>
@@ -464,5 +484,51 @@
     });
   }
 </script>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Tam <span>Sanat</span> Akademi</div>
+      <p class="footer-desc">"Sanat ile buluşmanın TAM adresi." — Antalya Muratpaşa'da MEB onaylı sanat eğitimi. 2020'den bu yana.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Kurslar</h4>
+      <ul>
+        <li><a href="dersler.html">Resim Kursu</a></li>
+        <li><a href="dersler.html">Seramik Kursu</a></li>
+        <li><a href="dersler.html">Müzik Kursları</a></li>
+        <li><a href="dersler.html">Bale & Dans</a></li>
+        <li><a href="dersler.html">Yaratıcı Drama</a></li>
+        <li><a href="dersler.html">GS Hazırlık</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Akademi</h4>
+      <ul>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="satis.html">Satış & Fiyatlar</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="market.html">Sanat Marketi</a></li>
+        <li><a href="satis.html#kayit-form">Kayıt Ol</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>İletişim</h4>
+      <ul>
+        <li><a href="tel:+902423247439">+90 (242) 324 74 39</a></li>
+        <li><a href="mailto:tamsanatakademi@gmail.com">tamsanatakademi@gmail.com</a></li>
+        <li>1989. Sk. No:25, Muratpaşa/Antalya</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Antalya Tam Sanat Akademi. Tüm hakları saklıdır.</span>
+    <div class="social-links">
+      <a href="https://www.instagram.com/tamsanatakademi" target="_blank" class="social-link" title="Instagram">📸</a>
+      <a href="https://wa.me/902423247439" target="_blank" class="social-link" title="WhatsApp">💬</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

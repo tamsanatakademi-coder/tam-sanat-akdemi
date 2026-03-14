@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanat Market | Tam Sanat Akademi Antalya — El Yapımı Seramik & Sanat Malzemeleri</title>
+<meta name="description" content="Tam Sanat Akademi Sanat Marketi — MEB onaylı akademimizin el yapımı seramik ürünleri, profesyonel kil çeşitleri, sır boyaları ve sanat malzemeleri. Antalya'dan hızlı teslimat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"ItemList","name":"Tam Sanat Akademi Sanat Marketi","url":"https://tamsanatakademi.com/market","numberOfItems":13,"itemListElement":[{"@type":"ListItem","position":1,"name":"Kırmızı Çömlek Kili No:1/2/3 — 25 kg"},{"@type":"ListItem","position":2,"name":"Şamotlu Stoneware Kil ES40/ES50/ES120 — 25 kg"},{"@type":"ListItem","position":3,"name":"Beyaz Çömlek Kili — 25 kg"},{"@type":"ListItem","position":4,"name":"Terrakota Kili No:1/2/3 — 25 kg"}]}</script>
+<style>
+:root{
+  --ink:#1a1208;--cream:#faf6ef;--warm:#f2ebe0;--warm-deep:#e8ddd0;
+  --tc:#c4562a;--tc-l:#e07050;--tc-p:rgba(196,86,42,.08);
+  --gold:#c9972b;--teal:#2a7c7a;
+  --text:#2d2416;--muted:#6b5e4e;--border:#e0d4c0;--border-l:#ede8de;
+  --ok:#2a7c4a;--err:#c42a2a;
+  --fd:'Playfair Display',serif;--fb:'DM Sans',sans-serif;
+  --ts:260ms cubic-bezier(.22,.9,.32,1);--tm:480ms cubic-bezier(.25,.8,.25,1);--tb:300ms cubic-bezier(.175,.885,.32,1.275);
+  --sh-sm:0 2px 8px rgba(26,18,8,.06);--sh-md:0 8px 24px rgba(26,18,8,.1);--sh-lg:0 20px 50px rgba(26,18,8,.14);--sh-cta:0 6px 22px rgba(196,86,42,.32);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--fb);background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+button,input,select{font-family:var(--fb)}
+a{color:inherit}
+*:focus-visible{outline:2px solid var(--tc);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* PROMO */
+.promo-banner{background:var(--ink);color:var(--cream);text-align:center;padding:10px 5vw;font-size:.8rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;position:relative;z-index:1001}
+.promo-banner strong{color:var(--gold)}
+.promo-banner a{color:var(--tc-l);font-weight:700;text-decoration:none}
+.promo-banner a:hover{text-decoration:underline}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:1000;background:rgba(250,246,239,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:68px;box-shadow:var(--sh-sm)}
+.nav-logo{font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.1}
+.nav-logo span{color:var(--tc)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:.85rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-active{color:var(--tc)!important;font-weight:600!important}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.nav-cta{background:var(--tc);color:#fff!important;padding:9px 18px;border-radius:50px;font-size:.83rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:all .2s}
+.nav-cta:hover{background:var(--tc-l);transform:translateY(-1px)}
+.cart-btn{position:relative;background:var(--warm);border:1.5px solid var(--border);padding:8px 14px;border-radius:50px;font-size:.82rem;font-weight:600;color:var(--ink);cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .2s}
+.cart-btn:hover{border-color:var(--tc);background:var(--tc-p)}
+.cart-count{position:absolute;top:-7px;right:-7px;background:var(--tc);color:#fff;font-size:.6rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;border:2px solid var(--cream)}
+.cart-count.show{display:flex}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
+
+/* MOBİL MENÜ */
+.mobile-menu{display:none;position:fixed;inset:0;z-index:1100;background:var(--cream);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--fd);font-size:1.75rem;font-weight:700;color:var(--ink);text-decoration:none;transition:color .2s}
+.mobile-menu a:hover{color:var(--tc)}
+.mob-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--ink)}
+.mob-cta{background:var(--tc)!important;color:#fff!important;padding:12px 28px;border-radius:50px;font-size:1rem!important;font-weight:700!important}
+
+/* HERO SLIDER */
+.hero-slider{position:relative;width:100%;height:min(560px,52vw);min-height:320px;overflow:hidden;background:var(--ink)}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity var(--tm);display:flex;align-items:center;pointer-events:none}
+.hero-slide.active{opacity:1;pointer-events:auto;z-index:2}
+.hero-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(8rem,18vw,16rem);opacity:.1;user-select:none}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(105deg,rgba(26,18,8,.9) 0%,rgba(26,18,8,.5) 55%,transparent 100%)}
+.hero-content{position:relative;z-index:3;padding:0 8vw;max-width:640px}
+.hero-slide.active .hero-content{animation:hIn .7s .1s cubic-bezier(.22,.9,.32,1) both}
+@keyframes hIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-tag{display:inline-block;background:var(--gold);color:var(--ink);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:1rem}
+.hero-h1{font-family:var(--fd);font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:.8rem}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-p{font-size:clamp(.85rem,1.5vw,1rem);color:rgba(255,255,255,.78);margin-bottom:1.6rem;line-height:1.65}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-hp{background:var(--tc);color:#fff;padding:13px 26px;border-radius:50px;font-size:.9rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:all var(--ts);box-shadow:var(--sh-cta)}
+.btn-hp:hover{background:var(--tc-l);transform:translateY(-3px);box-shadow:0 10px 30px rgba(196,86,42,.45)}
+.btn-hs{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:12px 24px;border-radius:50px;font-size:.9rem;font-weight:600;text-decoration:none;cursor:pointer;backdrop-filter:blur(8px);transition:all .2s}
+.btn-hs:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5)}
+.hero-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.38);cursor:pointer;transition:all .3s;border:none}
+.hero-dot.active{background:#fff;width:24px;border-radius:4px}
+.hero-arr{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.22);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:all .2s}
+.hero-arr:hover{background:rgba(255,255,255,.28)}
+.hero-arr.prev{left:20px}
+.hero-arr.next{right:20px}
+
+/* GÜVEN */
+.trust-bar{display:grid;grid-template-columns:repeat(4,1fr);background:var(--warm-deep);border-bottom:1px solid var(--border)}
+.trust-item{padding:15px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px;border-right:1px solid var(--border)}
+.trust-item:last-child{border-right:none}
+.ti-ico{font-size:1.35rem}
+.ti-lbl{font-size:.7rem;font-weight:700;color:var(--ink)}
+.ti-sub{font-size:.62rem;color:var(--muted)}
+
+/* BÖLÜM */
+.section{padding:56px 5vw}
+.sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+.sec-eye{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tc);margin-bottom:.4rem}
+.sec-title{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:var(--ink);line-height:1.2}
+.sec-title em{font-style:italic;color:var(--tc)}
+.sec-link{font-size:.85rem;font-weight:700;color:var(--tc);text-decoration:none;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.sec-link:hover{text-decoration:underline}
+
+/* KATEGORİ */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem}
+.cat-card{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;text-decoration:none;display:block;cursor:pointer}
+.cat-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5rem;transition:transform var(--tm)}
+.cat-card:hover .cat-bg{transform:scale(1.09)}
+.cat-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,18,8,.82) 0%,rgba(26,18,8,.2) 55%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:18px;transition:background .3s}
+.cat-card:hover .cat-ov{background:linear-gradient(to top,rgba(196,86,42,.86) 0%,rgba(26,18,8,.35) 60%,transparent 100%)}
+.cat-t{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:2px}
+.cat-c{font-size:.68rem;color:rgba(255,255,255,.72);font-weight:500}
+
+/* KONTROLLER */
+.shop-ctrl{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:0 5vw 18px;border-bottom:1px solid var(--border);margin-bottom:1.75rem}
+.filt-bar{display:flex;gap:.45rem;flex-wrap:wrap}
+.filt-btn{padding:7px 14px;border-radius:50px;font-size:.76rem;font-weight:600;cursor:pointer;border:1.5px solid var(--border);background:#fff;color:var(--muted);transition:all .2s}
+.filt-btn:hover{border-color:var(--tc);color:var(--tc)}
+.filt-btn.active{background:var(--tc);color:#fff;border-color:var(--tc)}
+.sort-sel{padding:8px 14px;border:1.5px solid var(--border);border-radius:50px;font-size:.76rem;font-weight:600;color:var(--text);background:var(--cream);cursor:pointer;outline:none;transition:border-color .2s}
+.sort-sel:focus{border-color:var(--tc)}
+
+/* ÜRÜN GRID */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.4rem;padding:0 5vw 80px}
+
+/* ÜRÜN KARTI */
+.pc{background:#fff;border:1.5px solid var(--border-l);border-radius:20px;overflow:hidden;transition:transform var(--ts),box-shadow var(--ts);position:relative;will-change:transform;cursor:pointer}
+.pc:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 12px 30px rgba(0,0,0,.12)}
+.pc.hidden{display:none}
+.pc-thumb{position:relative;aspect-ratio:4/5;overflow:hidden;cursor:zoom-in}
+.pc-thumb-in{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:clamp(3.5rem,5.5vw,5rem);transition:transform var(--tm)}
+.pc:hover .pc-thumb-in{transform:scale(1.07)}
+.pc-zoom{position:absolute;bottom:10px;right:10px;background:rgba(255,255,255,.9);border-radius:7px;padding:3px 8px;font-size:.6rem;font-weight:700;color:var(--muted);opacity:0;transition:opacity .2s;pointer-events:none}
+.pc:hover .pc-zoom{opacity:1}
+/* Hızlı eylem */
+.pc-qa{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:5px;opacity:0;transform:translateX(8px);transition:all .25s}
+.pc:hover .pc-qa{opacity:1;transform:translateX(0)}
+.qa-b{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.95);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.85rem;cursor:pointer;transition:all .2s;box-shadow:var(--sh-sm)}
+.qa-b:hover{background:var(--tc);border-color:var(--tc)}
+/* Rozetler */
+.pc-badges{position:absolute;top:11px;left:11px;display:flex;flex-direction:column;gap:4px;z-index:2;pointer-events:none}
+.badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:.6rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;line-height:1.2}
+.b-new{background:var(--teal);color:#fff}
+.b-sale{background:var(--tc);color:#fff}
+.b-hot{background:var(--gold);color:var(--ink)}
+.b-lim{background:var(--ink);color:#fff}
+/* Stok çubuğu */
+.pc-stbar{height:3px;background:var(--border)}
+.pc-stfill{height:100%;border-radius:2px;transition:width .6s}
+.st-hi .pc-stfill{background:var(--teal);width:78%}
+.st-md .pc-stfill{background:var(--gold);width:42%}
+.st-lo .pc-stfill{background:var(--tc);width:16%}
+/* Body */
+.pc-body{padding:14px}
+.pc-cat{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tc);margin-bottom:3px}
+.pc-name{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.25}
+.pc-desc{font-size:.75rem;color:var(--muted);line-height:1.55;margin-bottom:10px}
+/* Varyant */
+.vblk{margin-bottom:10px}
+.vtop{display:flex;justify-content:space-between;font-size:.65rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.vtop span{color:var(--tc)}
+.vopts{display:flex;gap:4px;flex-wrap:wrap}
+.vo{padding:4px 10px;border:1.5px solid var(--border);border-radius:7px;font-size:.7rem;font-weight:600;cursor:pointer;transition:all .2s;background:#fff;color:var(--text)}
+.vo:hover{border-color:var(--tc)}
+.vo.sel{background:var(--tc);color:#fff;border-color:var(--tc)}
+.vo.oos{opacity:.38;cursor:not-allowed;text-decoration:line-through}
+/* Renk */
+.copts{display:flex;gap:5px;flex-wrap:wrap}
+.co{width:22px;height:22px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all .2s;position:relative}
+.co:hover{transform:scale(1.15)}
+.co.sel{border-color:var(--ink);box-shadow:0 0 0 2px var(--cream),0 0 0 4px var(--ink)}
+.co::after{content:attr(data-n);position:absolute;bottom:calc(100%+5px);left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:.6rem;white-space:nowrap;padding:2px 6px;border-radius:5px;opacity:0;pointer-events:none;transition:opacity .2s}
+.co:hover::after{opacity:1}
+/* Footer */
+.pc-foot{display:flex;align-items:center;justify-content:space-between;gap:7px;padding-top:10px;border-top:1px solid var(--border-l);margin-top:4px}
+.p-now{font-family:var(--fd);font-size:1.2rem;font-weight:900;color:var(--tc);line-height:1}
+.p-was{font-size:.7rem;color:var(--muted);text-decoration:line-through;margin-top:1px}
+.p-disc{display:inline-block;background:var(--tc-p);color:var(--tc);font-size:.62rem;font-weight:700;padding:2px 5px;border-radius:5px;margin-left:3px}
+.btn-cart{background:var(--tc);color:#fff;border:none;padding:9px 14px;border-radius:50px;font-size:.76rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap;transition:all var(--ts);box-shadow:0 3px 12px rgba(196,86,42,.2)}
+.btn-cart:hover{background:var(--tc-l);transform:translateY(-1px);box-shadow:var(--sh-cta)}
+.btn-cart.added{background:var(--ok)}
+.st-warn{font-size:.68rem;font-weight:700;color:var(--tc);margin-top:5px;display:flex;align-items:center;gap:3px}
+
+/* SEPET DRAWER */
+.cart-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:2000;backdrop-filter:blur(4px)}
+.cart-ov.open{display:block}
+.cart-drw{position:fixed;top:0;right:-440px;width:440px;max-width:100vw;height:100vh;background:var(--cream);z-index:2001;transition:right var(--tm);display:flex;flex-direction:column;box-shadow:-8px 0 48px rgba(0,0,0,.18)}
+.cart-drw.open{right:0}
+.c-hdr{padding:20px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.c-hdr h3{font-family:var(--fd);font-size:1.2rem;font-weight:700}
+.c-hdr button{background:none;border:none;font-size:1.35rem;cursor:pointer;color:var(--muted);padding:4px;transition:color .2s}
+.c-hdr button:hover{color:var(--tc)}
+.c-items{flex:1;overflow-y:auto;padding:14px 22px}
+.c-empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.c-empty-ico{font-size:3rem;margin-bottom:10px;opacity:.45}
+.c-item{display:flex;gap:11px;padding:13px 0;border-bottom:1px solid var(--border-l);align-items:flex-start}
+.ci-thumb{width:58px;height:58px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.ci-info{flex:1}
+.ci-name{font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:2px}
+.ci-var{font-size:.7rem;color:var(--muted);margin-bottom:6px}
+.ci-acts{display:flex;align-items:center;gap:7px}
+.qty-b{width:24px;height:24px;border-radius:6px;border:1.5px solid var(--border);background:#fff;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--ink);transition:all .2s}
+.qty-b:hover{border-color:var(--tc);color:var(--tc)}
+.qty-n{font-size:.85rem;font-weight:700;min-width:18px;text-align:center}
+.ci-pr{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--tc);margin-left:6px}
+.ci-del{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.8rem;transition:color .2s;margin-left:auto}
+.ci-del:hover{color:var(--err)}
+.c-ftr{padding:18px 22px;border-top:1px solid var(--border)}
+.c-tot{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.c-tot span{font-size:.83rem;color:var(--muted)}
+.c-tot strong{font-family:var(--fd);font-size:1.45rem;color:var(--ink)}
+.c-note{font-size:.7rem;color:var(--teal);font-weight:600;margin-bottom:12px}
+.btn-checkout{width:100%;padding:14px;background:var(--tc);color:#fff;border:none;border-radius:50px;font-family:var(--fb);font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:var(--sh-cta);display:flex;align-items:center;justify-content:center;gap:7px}
+.btn-checkout:hover{background:var(--tc-l);transform:translateY(-2px)}
+
+/* ÜRÜN MODALİ */
+.mod-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.62);z-index:3000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
+.mod-ov.open{display:flex}
+.mod-box{background:var(--cream);border-radius:24px;max-width:880px;width:100%;max-height:92vh;overflow-y:auto;position:relative;animation:modPop .35s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes modPop{from{opacity:0;transform:scale(.9) translateY(22px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.mod-close{position:absolute;top:13px;right:13px;background:rgba(255,255,255,.9);border:1px solid var(--border);border-radius:50%;width:36px;height:36px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:all .2s}
+.mod-close:hover{background:var(--tc);color:#fff;border-color:var(--tc)}
+.mod-grid{display:grid;grid-template-columns:1fr 1fr}
+.mod-vis{border-radius:24px 0 0 24px;display:flex;align-items:center;justify-content:center;font-size:7rem;min-height:380px;position:relative;overflow:hidden}
+.mod-vis::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 40% 35%,rgba(255,255,255,.15),transparent 60%)}
+.mod-info{padding:32px 28px}
+.mod-cat{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tc);margin-bottom:6px}
+.mod-title{font-family:var(--fd);font-size:1.45rem;font-weight:900;color:var(--ink);margin-bottom:9px;line-height:1.2}
+.mod-desc{font-size:.83rem;color:var(--muted);line-height:1.7;margin-bottom:14px}
+/* accordion */
+.acc{margin-bottom:16px}
+.acc-item{border-bottom:1px solid var(--border-l)}
+.acc-btn{width:100%;background:none;border:none;padding:11px 0;display:flex;justify-content:space-between;align-items:center;font-size:.88rem;font-weight:600;cursor:pointer;color:var(--ink);transition:color .2s}
+.acc-btn:hover{color:var(--tc)}
+.acc-ico{font-size:.72rem;transition:transform .25s}
+.acc-btn[aria-expanded="true"] .acc-ico{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height var(--ts)}
+.acc-body ul{list-style:none;padding:0 0 10px;display:flex;flex-direction:column;gap:4px}
+.acc-body li{font-size:.8rem;color:var(--text);display:flex;gap:7px;align-items:flex-start}
+.acc-body li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px}
+/* price */
+.mod-pr-row{display:flex;align-items:center;gap:9px;margin-bottom:16px}
+.mod-pr{font-family:var(--fd);font-size:1.9rem;font-weight:900;color:var(--tc)}
+.mod-was{font-size:.92rem;color:var(--muted);text-decoration:line-through}
+.mod-disc{background:var(--tc-p);color:var(--tc);font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:9px}
+/* trust mini */
+.mod-trust{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:16px}
+.tm{font-size:.7rem;color:var(--muted);display:flex;align-items:center;gap:3px;font-weight:600}
+/* btns */
+.btn-mc{width:100%;padding:13px;background:var(--tc);color:#fff;border:none;border-radius:50px;font-family:var(--fb);font-size:.88rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:var(--sh-cta);display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:8px}
+.btn-mc:hover{background:var(--tc-l);transform:translateY(-2px)}
+.btn-mw{width:100%;padding:12px;background:#25d366;color:#fff;border:none;border-radius:50px;font-family:var(--fb);font-size:.85rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;transition:all .2s}
+.btn-mw:hover{background:#1fad55;transform:translateY(-1px)}
+
+/* STİCKY BUY */
+.sticky-buy{position:fixed;bottom:76px;left:50%;transform:translateX(-50%) translateY(120%);background:var(--cream);border:1.5px solid var(--border);border-radius:16px;padding:11px 15px;display:flex;justify-content:space-between;align-items:center;gap:14px;box-shadow:var(--sh-lg);z-index:900;transition:transform var(--tb);min-width:280px;max-width:480px;width:calc(100% - 40px)}
+.sticky-buy.vis{transform:translateX(-50%) translateY(0)}
+.sb-name{font-size:.8rem;font-weight:600;color:var(--ink)}
+.sb-pr{font-family:var(--fd);font-size:1.05rem;font-weight:900;color:var(--tc)}
+.btn-sb{background:var(--tc);color:#fff;border:none;padding:9px 18px;border-radius:50px;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:all .2s;box-shadow:var(--sh-cta)}
+.btn-sb:hover{background:var(--tc-l);transform:translateY(-1px)}
+
+/* TOAST */
+.toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--ink);color:#fff;padding:10px 20px;border-radius:50px;font-size:.8rem;font-weight:600;z-index:5000;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;display:flex;align-items:center;gap:6px;box-shadow:var(--sh-lg)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* FADE-UP */
+.fade-up{opacity:0;transform:translateY(14px);transition:opacity 380ms ease,transform 380ms ease}
+.fade-up.vis{opacity:1;transform:translateY(0)}
+
+/* PROMO SEC */
+.promo-sec{margin:0 5vw 56px;border-radius:22px;background:linear-gradient(135deg,var(--ink) 0%,#3a2a18 100%);padding:44px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;position:relative;overflow:hidden}
+.promo-sec::before{content:'🎨';position:absolute;right:5%;top:50%;transform:translateY(-50%);font-size:10rem;opacity:.07;pointer-events:none}
+.promo-sec .eye{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.promo-sec h2{font-family:var(--fd);font-size:clamp(1.35rem,3vw,1.9rem);font-weight:900;color:#fff;margin-bottom:.4rem}
+.promo-sec p{font-size:.85rem;color:rgba(255,255,255,.68);max-width:380px}
+.btn-promo{background:var(--gold);color:var(--ink);padding:13px 26px;border-radius:50px;font-size:.88rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.btn-promo:hover{background:#e0a830;transform:translateY(-2px)}
+
+/* WA */
+.wa-sticky{position:fixed;bottom:24px;right:24px;z-index:999;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.45rem;text-decoration:none;box-shadow:0 6px 24px rgba(37,211,102,.45);animation:waPulse 2.5s ease-in-out infinite}
+@keyframes waPulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.45)}50%{box-shadow:0 6px 36px rgba(37,211,102,.72)}}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.78);padding:44px 5vw 28px}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.f-logo{font-family:var(--fd);font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:.7rem}
+.f-logo span{color:var(--tc-l)}
+.f-desc{font-size:.78rem;line-height:1.7;color:rgba(255,255,255,.55);margin-bottom:.9rem}
+.f-socials{display:flex;gap:.7rem}
+.f-soc{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.9rem;transition:background .2s}
+.f-soc:hover{background:var(--tc)}
+.f-col h4{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.88);margin-bottom:.9rem}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.f-col a{font-size:.78rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.f-col a:hover{color:var(--tc-l)}
+.f-bot{border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem}
+.f-bot p{font-size:.72rem;color:rgba(255,255,255,.38)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.f-grid{grid-template-columns:1fr 1fr;gap:2rem}.mod-grid{grid-template-columns:1fr}.mod-vis{border-radius:24px 24px 0 0;min-height:200px;font-size:4.5rem}}
+@media(max-width:768px){.trust-bar{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}.hamburger{display:flex}.nav-right .nav-cta{display:none}.prod-grid{grid-template-columns:repeat(2,1fr);gap:.85rem;padding:0 3.5vw 60px}.pc-body{padding:11px}.pc-name{font-size:.88rem}.hero-arr{display:none}.promo-sec{text-align:center;justify-content:center}.promo-sec::before{display:none}.f-grid{grid-template-columns:1fr;gap:1.4rem}}
+@media(max-width:480px){.cart-drw{width:100vw}.sticky-buy{left:14px;right:14px;transform:translateY(120%)}.sticky-buy.vis{transform:translateY(0)}}
+
+  /* FOOTER */
+  footer{background:#1a1208;color:rgba(255,255,255,.75);padding:44px 5vw 20px}
+  .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+  .footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+  .footer-logo span{color:#e07050}
+  .footer-desc{font-size:.78rem;line-height:1.7;color:rgba(255,255,255,.5)}
+  .footer-col h4{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:.8rem}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+  .footer-col a{font-size:.78rem;color:rgba(255,255,255,.48);text-decoration:none;transition:color .2s}
+  .footer-col a:hover{color:#e07050}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+  .footer-bottom span{font-size:.72rem;color:rgba(255,255,255,.35)}
+  .social-links{display:flex;gap:.6rem}
+  .social-link{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.85rem;transition:background .2s}
+  .social-link:hover{background:#c4562a}
+  @media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.footer-top{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<!-- SEPET -->
+<div class="cart-ov" id="cOv" onclick="closeCart()"></div>
+<div class="cart-drw" id="cDrw">
+  <div class="c-hdr"><h3>🛒 Sepetim</h3><button onclick="closeCart()" aria-label="Kapat">✕</button></div>
+  <div class="c-items" id="cItems">
+    <div class="c-empty" id="cEmpty"><div class="c-empty-ico">🛒</div><p style="font-weight:600;margin-bottom:4px">Sepetiniz boş</p><p style="font-size:.75rem">Alışverişe başlamak için ürün ekleyin</p></div>
+  </div>
+  <div class="c-ftr">
+    <div class="c-tot"><span>Toplam</span><strong id="cTotal">₺0</strong></div>
+    <p class="c-note">✓ Akademide teslim alım veya Antalya içi teslimat</p>
+    <button class="btn-checkout" onclick="checkout()">💬 WhatsApp ile Sipariş Ver</button>
+  </div>
+</div>
+
+<!-- ÜRÜN MODALİ -->
+<div class="mod-ov" id="pModal" onclick="modOutClick(event)">
+  <div class="mod-box" id="modBox">
+    <button class="mod-close" onclick="closeModal()" aria-label="Kapat">✕</button>
+    <div class="mod-grid">
+      <div class="mod-vis" id="modVis"></div>
+      <div class="mod-info" id="modInfo"></div>
+    </div>
+  </div>
+</div>
+
+<!-- STİCKY BUY -->
+<div class="sticky-buy" id="stickyBuy" aria-hidden="true">
+  <div><div class="sb-name" id="sbName">—</div><div class="sb-pr" id="sbPr">—</div></div>
+  <button class="btn-sb" onclick="stickyAdd()">🛒 Ekle</button>
+</div>
+
+<!-- MOBİL MENÜ -->
+<div class="mobile-menu" id="mobMenu">
+  <button class="mob-close" onclick="closeMob()" aria-label="Kapat">✕</button>
+  <a href="index.html" onclick="closeMob()">Ana Sayfa</a>
+  <a href="dersler.html" onclick="closeMob()">Dersler</a>
+  <a href="satis.html" onclick="closeMob()">Fiyatlar</a>
+  <a href="hakkimizda.html" onclick="closeMob()">Hakkımızda</a>
+  <a href="galeri.html" onclick="closeMob()">Galeri</a>
+  <a href="market.html" onclick="closeMob()" style="color:var(--tc)!important">Market</a>
+  <a href="satis.html#kayit-form" class="mob-cta" onclick="closeMob()">Kayıt Ol</a>
+</div>
+
+<a href="https://wa.me/902423247439" class="wa-sticky" aria-label="WhatsApp" target="_blank">💬</a>
+
+<!-- PROMO & NAV -->
+<div class="promo-banner">🎨 Kurs alanlara market alışverişinde <strong>%10 indirim!</strong> &nbsp;|&nbsp;<a href="satis.html#kayit-form">Ücretsiz deneme dersi →</a></div>
+<nav>
+  <a href="index.html" class="nav-logo">Tam <span>Sanat</span><br>Akademi</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="dersler.html">Dersler</a></li>
+    <li><a href="satis.html">Satış & Fiyatlar</a></li>
+    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="galeri.html">Galeri</a></li>
+    <li><a href="market.html" class="nav-active">Market</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="cart-btn" onclick="openCart()" aria-label="Sepet">🛒 Sepet <span class="cart-count" id="cCount">0</span></button>
+    <a href="satis.html#kayit-form" class="nav-cta">Kayıt →</a>
+  </div>
+  <button class="hamburger" onclick="openMob()" aria-label="Menü"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ═══ HERO SLIDER ═══ -->
+<div class="hero-slider" id="heroSlider">
+  <div class="hero-slide active" style="background:linear-gradient(135deg,#1a1208,#3a2010)">
+    <div class="hero-bg">🏺</div><div class="hero-ov"></div>
+    <div class="hero-content">
+      <span class="hero-tag">⭐ En Çok Satan</span>
+      <h1 class="hero-h1">El Yapımı <em>Seramik</em><br>Ürünler</h1>
+      <p class="hero-p">Öğrencilerimizin tornada şekillendirip el boyasıyla renklendirdiği, her biri özgün ve tek parça seramikler. Sınırlı stok.</p>
+      <div class="hero-btns"><a href="#urunler" class="btn-hp">🛒 Alışverişe Başla</a><a href="#kategoriler" class="btn-hs">Kategoriler →</a></div>
+    </div>
+  </div>
+  <div class="hero-slide" style="background:linear-gradient(135deg,#1a2a28,#0d3a38)">
+    <div class="hero-bg">📦</div><div class="hero-ov"></div>
+    <div class="hero-content">
+      <span class="hero-tag" style="background:var(--teal)">📦 Setler</span>
+      <h1 class="hero-h1">Başlangıç <em>Setleri</em><br>Her Yaşa Uygun</h1>
+      <p class="hero-p">Kursa yeni başlayanlar için eksiksiz seramik setleri. Kil, sır boyası, araçlar ve önlük bir arada. %20 tasarruf!</p>
+      <div class="hero-btns"><button class="btn-hp" onclick="filterProductsScroll('set')">📦 Setleri Gör</button><a href="dersler.html" class="btn-hs">Kurslar →</a></div>
+    </div>
+  </div>
+  <div class="hero-slide" style="background:linear-gradient(135deg,#2a1a0e,#4a3020)">
+    <div class="hero-bg">🎨</div><div class="hero-ov"></div>
+    <div class="hero-content">
+      <span class="hero-tag" style="background:var(--tc)">🔥 Sınırlı Stok</span>
+      <h1 class="hero-h1">Profesyonel <em>Kil</em><br>Çeşitleri</h1>
+      <p class="hero-p">Kırmızı çömlek (No:1/2/3), stoneware (ES40/50/120), beyaz kil ve terrakota. Her çeşit 25 kg çuval — akademide kullandığımız kil seçkisi.</p>
+      <div class="hero-btns"><button class="btn-hp" onclick="filterProductsScroll('seramik')">🏺 Killeri Gör</button><a href="hakkimizda.html" class="btn-hs">Hakkımızda →</a></div>
+    </div>
+  </div>
+  <div class="hero-dots" id="hDots">
+    <button class="hero-dot active" onclick="goSlide(0)" aria-label="Slayt 1"></button>
+    <button class="hero-dot" onclick="goSlide(1)" aria-label="Slayt 2"></button>
+    <button class="hero-dot" onclick="goSlide(2)" aria-label="Slayt 3"></button>
+  </div>
+  <button class="hero-arr prev" onclick="prevSlide()" aria-label="Önceki">‹</button>
+  <button class="hero-arr next" onclick="nextSlide()" aria-label="Sonraki">›</button>
+</div>
+
+<!-- GÜVEN -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="ti-ico">🚚</div><div class="ti-lbl">Antalya İçi Teslimat</div><div class="ti-sub">Aynı / ertesi gün</div></div>
+  <div class="trust-item"><div class="ti-ico">🏅</div><div class="ti-lbl">MEB Onaylı Akademi</div><div class="ti-sub">2020'den beri</div></div>
+  <div class="trust-item"><div class="ti-ico">💬</div><div class="ti-lbl">WhatsApp Sipariş</div><div class="ti-sub">7/24 iletişim</div></div>
+  <div class="trust-item"><div class="ti-ico">🎁</div><div class="ti-lbl">Hediye Paketleme</div><div class="ti-sub">Ücretsiz özel kutu</div></div>
+</div>
+
+<!-- KATEGORİLER -->
+<div class="section" id="kategoriler">
+  <div class="sec-hdr">
+    <div><div class="sec-eye">Kategoriler</div><h2 class="sec-title">Ne <em>Arıyorsunuz?</em></h2></div>
+    <a href="#urunler" class="sec-link">Tüm ürünler →</a>
+  </div>
+  <div class="cat-grid">
+    <a class="cat-card fade-up" onclick="filterProductsScroll('seramik')" href="javascript:void(0)" style="background:linear-gradient(135deg,#2a1808,#5a3010)"><div class="cat-bg">🏺</div><div class="cat-ov"><div class="cat-t">Seramik Kil</div><div class="cat-c">3 tür · Kırmızı, Stoneware, Beyaz & Terrakota</div></div></a>
+    <a class="cat-card fade-up" onclick="filterProductsScroll('urun')" href="javascript:void(0)" style="background:linear-gradient(135deg,#1a1a3e,#2a2a6e)"><div class="cat-bg">⭐</div><div class="cat-ov"><div class="cat-t">El Yapımı Ürünler</div><div class="cat-c">4 ürün · Bardak, Çanak, Vazo</div></div></a>
+    <a class="cat-card fade-up" onclick="filterProductsScroll('malzeme')" href="javascript:void(0)" style="background:linear-gradient(135deg,#1a2a10,#2a4a18)"><div class="cat-bg">🎨</div><div class="cat-ov"><div class="cat-t">Sanat Malzemeleri</div><div class="cat-c">3 ürün · Sır Boya, Araçlar, Önlük</div></div></a>
+    <a class="cat-card fade-up" onclick="filterProductsScroll('set')" href="javascript:void(0)" style="background:linear-gradient(135deg,#2a1a3e,#3a1a5e)"><div class="cat-bg">📦</div><div class="cat-ov"><div class="cat-t">Başlangıç Setleri</div><div class="cat-c">2 ürün · Yetişkin & Çocuk</div></div></a>
+  </div>
+</div>
+
+<!-- ÜRÜNLER BAŞLIK -->
+<div style="padding:0 5vw">
+  <div class="sec-hdr" style="margin-bottom:0">
+    <div><div class="sec-eye">Ürün Kataloğu</div><h2 class="sec-title" id="urunler">Tüm <em>Ürünler</em></h2></div>
+    <div style="font-size:.78rem;color:var(--muted)" id="rCount">13 ürün</div>
+  </div>
+</div>
+<div class="shop-ctrl" style="padding-top:18px">
+  <div class="filt-bar">
+    <button class="filt-btn active" onclick="filterP('all',this)">Tümü (13)</button>
+    <button class="filt-btn" onclick="filterP('seramik',this)">🏺 Kil (4)</button>
+    <button class="filt-btn" onclick="filterP('urun',this)">⭐ El Yapımı</button>
+    <button class="filt-btn" onclick="filterP('malzeme',this)">🎨 Malzeme</button>
+    <button class="filt-btn" onclick="filterP('set',this)">📦 Setler</button>
+  </div>
+  <select class="sort-sel" onchange="sortP(this.value)">
+    <option value="default">Önerilen</option>
+    <option value="price-asc">Fiyat ↑</option>
+    <option value="price-desc">Fiyat ↓</option>
+    <option value="name">İsme Göre</option>
+  </select>
+</div>
+
+<!-- ÜRÜN GRİDİ -->
+<div class="prod-grid" id="pGrid">
+
+  <!-- 1 -->
+  <div class="pc fade-up" data-cat="seramik" data-price="1850" data-name="Kırmızı Çömlek Kili No:1" id="card-1">
+    <div class="pc-thumb" onclick="openModal('kirmizi-kil')" style="background:linear-gradient(135deg,#f5e0d0,#d4906a)"><div class="pc-thumb-in">🏺</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-badges"><span class="badge b-hot">Çok Satan</span></div>
+    <div class="pc-qa"><button class="qa-b" onclick="openModal('kirmizi-kil')">👁️</button><button class="qa-b" onclick="addById('1')">🛒</button></div>
+    <div class="pc-stbar st-md"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">Seramik Kil · 25 kg</div><div class="pc-name">Kırmızı Çömlek Kili</div>
+      <div class="pc-desc">Akademide kullanılan çömlek kili — ince (torna), orta (el + torna) ve kaba (heykel) şamot seçenekleri.</div>
+      <div class="vblk">
+        <div class="vtop">Çeşit <span id="vs-1">No:1 — İnce Şamot</span></div>
+        <div class="vopts">
+          <div class="vo sel" onclick="setV(this,'1','No:1 — İnce Şamot',1850)" title="Pürüzsüz yüzey, torna için ideal">No:1</div>
+          <div class="vo" onclick="setV(this,'2-alt','No:2 — Orta Şamot',1850)" title="Çok yönlü, el + torna">No:2</div>
+          <div class="vo" onclick="setV(this,'3-alt','No:3 — Kaba Şamot',1850)" title="Heykel ve büyük formlar">No:3</div>
+        </div>
+        <div style="font-size:.65rem;color:var(--muted);margin-top:4px">📦 Paket: <strong>25 kg</strong></div>
+      </div>
+      <div class="pc-foot"><div><div class="p-now" id="pr-1">₺1.850</div><div class="p-was" style="font-size:.65rem;color:var(--muted)">/ 25 kg çuval</div></div><button class="btn-cart" id="bc-1" onclick="addToCart('1','Kırmızı Çömlek Kili','🏺','#f5e0d0,#d4906a')">🛒 Ekle</button></div>
+      <div class="st-warn">⚠️ Son 8 çuval!</div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="pc fade-up" data-cat="seramik" data-price="2200" data-name="Şamotlu Stoneware Kil" id="card-2">
+    <div class="pc-thumb" onclick="openModal('samotlu-kil')" style="background:linear-gradient(135deg,#ede0c8,#b89060)"><div class="pc-thumb-in">🏔️</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-badges"><span class="badge b-new">Yeni Stok</span></div>
+    <div class="pc-qa"><button class="qa-b" onclick="openModal('samotlu-kil')">👁️</button><button class="qa-b" onclick="addById('2')">🛒</button></div>
+    <div class="pc-stbar st-hi"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">Stoneware Kil · 25 kg</div><div class="pc-name">Şamotlu Stoneware Kil</div>
+      <div class="pc-desc">1280°C yüksek derece pişirim. ES40 (ince), ES50 (orta) ve ES120 (kaba) şamot seçenekleri.</div>
+      <div class="vblk">
+        <div class="vtop">Çeşit <span id="vs-2">ES40 — İnce Şamot</span></div>
+        <div class="vopts">
+          <div class="vo sel" onclick="setV(this,'2','ES40 — İnce Şamot',2200)" title="İnce şamot, pürüzsüz yüzey, 1280°C">ES40</div>
+          <div class="vo" onclick="setV(this,'2','ES50 — Orta Şamot',2200)" title="Orta şamot, çok yönlü, 1280°C">ES50</div>
+          <div class="vo" onclick="setV(this,'2','ES120 — Kaba Şamot',2200)" title="Kaba şamot, büyük formlar, 1280°C">ES120</div>
+        </div>
+        <div style="font-size:.65rem;color:var(--muted);margin-top:4px">📦 Paket: <strong>25 kg</strong> · 🌡️ <strong>1280°C</strong></div>
+      </div>
+      <div class="pc-foot"><div><div class="p-now" id="pr-2">₺2.200</div><div class="p-was" style="font-size:.65rem;color:var(--muted)">/ 25 kg çuval</div></div><button class="btn-cart" id="bc-2" onclick="addToCart('2','Şamotlu Stoneware Kil','🏔️','#ede0c8,#b89060')">🛒 Ekle</button></div>
+    </div>
+  </div>
+
+  <!-- 2b — BEYAZ KİL (YENİ) -->
+  <div class="pc fade-up" data-cat="seramik" data-price="1950" data-name="Beyaz Çömlek Kili" id="card-2b">
+    <div class="pc-thumb" onclick="openModal('beyaz-kil')" style="background:linear-gradient(135deg,#f8f5f0,#e8e0d8)"><div class="pc-thumb-in">🤍</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-badges"><span class="badge b-new">Yeni</span></div>
+    <div class="pc-qa"><button class="qa-b" onclick="openModal('beyaz-kil')">👁️</button><button class="qa-b" onclick="addById('2b')">🛒</button></div>
+    <div class="pc-stbar st-hi"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">Beyaz Kil · 25 kg</div><div class="pc-name">Beyaz Çömlek Kili</div>
+      <div class="pc-desc">Açık pişirim rengine sahip beyaz kil. Sır boyalarında en canlı renkleri verir. Döküm ve torna uyumlu.</div>
+      <div class="vblk">
+        <div class="vtop">Çeşit <span id="vs-2b">No:1 — İnce (Torna)</span></div>
+        <div class="vopts">
+          <div class="vo sel" onclick="setV(this,'2b','No:1 — İnce (Torna)',1950)" title="İnce taneli, torna çalışmaları için">No:1</div>
+          <div class="vo" onclick="setV(this,'2b','No:2 — Orta (El + Torna)',1950)" title="Orta plastikiyetli, çok yönlü">No:2</div>
+          <div class="vo" onclick="setV(this,'2b','Döküm Slip (Likit)',2100)" title="Likit form, kalıba döküm için">Döküm</div>
+        </div>
+        <div style="font-size:.65rem;color:var(--muted);margin-top:4px">📦 Paket: <strong>25 kg</strong> · 🌡️ <strong>1080°C</strong></div>
+      </div>
+      <div class="pc-foot"><div><div class="p-now" id="pr-2b">₺1.950</div><div class="p-was" style="font-size:.65rem;color:var(--muted)">/ 25 kg çuval</div></div><button class="btn-cart" id="bc-2b" onclick="addToCart('2b','Beyaz Çömlek Kili','🤍','#f8f5f0,#e8e0d8')">🛒 Ekle</button></div>
+    </div>
+  </div>
+
+  <!-- 3 — Pişmiş Toprak / Terrakota Kil -->
+  <div class="pc fade-up" data-cat="seramik" data-price="1650" data-name="Terrakota Kili" id="card-3">
+    <div class="pc-thumb" onclick="openModal('terrakota-kil')" style="background:linear-gradient(135deg,#f0e0c0,#cc7040)"><div class="pc-thumb-in">🪴</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-badges"><span class="badge b-hot">Çocuk Dostu</span></div>
+    <div class="pc-stbar st-hi"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">Terrakota Kil · 25 kg</div><div class="pc-name">Terrakota Kili</div>
+      <div class="pc-desc">Çocuk & yetişkin atölye derslerinde en çok kullanılan kil. Sıcak turuncu-kırmızı rengi ile doğal görünüm.</div>
+      <div class="vblk">
+        <div class="vtop">Çeşit <span id="vs-3">No:1 — Çocuk / Başlangıç</span></div>
+        <div class="vopts">
+          <div class="vo sel" onclick="setV(this,'3','No:1 — Çocuk / Başlangıç',1650)" title="Yumuşak, kolay şekillendirme">No:1</div>
+          <div class="vo" onclick="setV(this,'3','No:2 — Orta',1650)" title="Orta sertlik, genel kullanım">No:2</div>
+          <div class="vo" onclick="setV(this,'3','No:3 — Kaba Şamot',1650)" title="Kaba doku, heykel">No:3</div>
+        </div>
+        <div style="font-size:.65rem;color:var(--muted);margin-top:4px">📦 Paket: <strong>25 kg</strong> · 🌡️ <strong>950–1050°C</strong></div>
+      </div>
+      <div class="pc-foot"><div><div class="p-now" id="pr-3">₺1.650</div><div class="p-was" style="font-size:.65rem;color:var(--muted)">/ 25 kg çuval</div></div><button class="btn-cart" id="bc-3" onclick="addToCart('3','Terrakota Kili','🪴','#f0e0c0,#cc7040')">🛒 Ekle</button></div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="pc fade-up" data-cat="urun" data-price="900" data-name="Yıldız Gökyüzü Bardağı" id="card-4">
+    <div class="pc-thumb" onclick="openModal('yildiz-bardak')" style="background:linear-gradient(135deg,#1a1a3e,#3a3a7e)"><div class="pc-thumb-in">⭐</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-badges"><span class="badge b-sale">%10 İndirim</span><span class="badge b-lim">Son 5</span></div>
+    <div class="pc-qa"><button class="qa-b" onclick="openModal('yildiz-bardak')">👁️</button><button class="qa-b" onclick="addById('4')">🛒</button></div>
+    <div class="pc-stbar st-lo"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">El Yapımı Ürün</div><div class="pc-name">Seramik Yıldız Gökyüzü Bardağı</div>
+      <div class="pc-desc">El yapımı, benzersiz yıldız gökyüzü desenli seramik bardak. Her biri özel ve tek parçadır.</div>
+      <div class="vblk"><div class="vtop">Renk <span id="vs-4">Gece Mavisi</span></div><div class="copts"><div class="co sel" style="background:linear-gradient(135deg,#1a1a5e,#3a3a9e)" data-n="Gece Mavisi" onclick="setC(this,'4','Gece Mavisi',900)"></div><div class="co" style="background:linear-gradient(135deg,#2a1a4e,#6a3a9e)" data-n="Mor Evren" onclick="setC(this,'4','Mor Evren',900)"></div><div class="co" style="background:linear-gradient(135deg,#1a3a2a,#2a6a4a)" data-n="Orman" onclick="setC(this,'4','Orman Yeşili',900)"></div></div></div>
+      <div class="pc-foot"><div><div class="p-now">₺900<span class="p-disc">%10</span></div><div class="p-was">₺1.000</div></div><button class="btn-cart" id="bc-4" onclick="addToCart('4','Yıldız Gökyüzü Bardağı','⭐','#1a1a3e,#3a3a7e')">🛒 Ekle</button></div>
+      <div class="st-warn">🔥 Son 5 adet!</div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="pc fade-up" data-cat="malzeme" data-price="320" data-name="Seramik Sır Boyası Seti" id="card-5">
+    <div class="pc-thumb" onclick="openModal('sir-boya')" style="background:linear-gradient(135deg,#f0e8f0,#d090d0)"><div class="pc-thumb-in">🎨</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-badges"><span class="badge b-new">Yeni Renk</span></div>
+    <div class="pc-stbar st-hi"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">Sanat Malzemeleri</div><div class="pc-name">Seramik Sır Boyası Seti</div>
+      <div class="pc-desc">Fırınlamaya uygun, canlı renkli sır boyaları. Mat ve parlak finish seçenekli.</div>
+      <div class="vblk"><div class="vtop">Set <span id="vs-5">6'lı</span></div><div class="vopts"><div class="vo sel" onclick="setV(this,'5','6\'lı',320)">6'lı Set</div><div class="vo" onclick="setV(this,'5','12\'li',580)">12'li Set</div><div class="vo" onclick="setV(this,'5','Tekil',60)">Tekil</div></div></div>
+      <div class="pc-foot"><div><div class="p-now" id="pr-5">₺320</div></div><button class="btn-cart" id="bc-5" onclick="addToCart('5','Sır Boyası Seti','🎨','#f0e8f0,#d090d0')">🛒 Ekle</button></div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="pc fade-up" data-cat="urun" data-price="650" data-name="El Yapımı Seramik Çanak" id="card-6">
+    <div class="pc-thumb" onclick="openModal('seramik-canak')" style="background:linear-gradient(135deg,#f0e0c8,#c8906a)"><div class="pc-thumb-in">🥣</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-stbar st-md"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">El Yapımı Ürün</div><div class="pc-name">El Yapımı Seramik Çanak</div>
+      <div class="pc-desc">Tornada şekillendirilmiş, el boyamalı özgün seramik çanak. Dekoratif ve fonksiyonel.</div>
+      <div class="vblk"><div class="vtop">Boyut <span id="vs-6">Küçük</span></div><div class="vopts"><div class="vo sel" onclick="setV(this,'6','Küçük (12cm)',650)">Küçük</div><div class="vo" onclick="setV(this,'6','Orta (18cm)',850)">Orta</div><div class="vo" onclick="setV(this,'6','Büyük (24cm)',1100)">Büyük</div></div></div>
+      <div class="pc-foot"><div><div class="p-now" id="pr-6">₺650</div></div><button class="btn-cart" id="bc-6" onclick="addToCart('6','Seramik Çanak','🥣','#f0e0c8,#c8906a')">🛒 Ekle</button></div>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="pc fade-up" data-cat="set" data-price="1490" data-name="Seramik Başlangıç Seti" id="card-7">
+    <div class="pc-thumb" onclick="openModal('baslangic-set')" style="background:linear-gradient(135deg,#e8f0e0,#a0c080)"><div class="pc-thumb-in">📦</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-badges"><span class="badge b-hot">En Popüler</span></div>
+    <div class="pc-qa"><button class="qa-b" onclick="openModal('baslangic-set')">👁️</button><button class="qa-b" onclick="addById('7')">🛒</button></div>
+    <div class="pc-stbar st-hi"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">Başlangıç Seti</div><div class="pc-name">Seramik Başlangıç Seti</div>
+      <div class="pc-desc">Yeni başlayanlar için: 5kg kil + 6'lı sır boya + araçlar + önlük. %20 tasarruf!</div>
+      <div class="pc-foot"><div><div class="p-now">₺1.490<span class="p-disc">%20</span></div><div class="p-was">₺1.850</div></div><button class="btn-cart" id="bc-7" onclick="addToCart('7','Başlangıç Seti','📦','#e8f0e0,#a0c080')">🛒 Ekle</button></div>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="pc fade-up" data-cat="malzeme" data-price="280" data-name="Modelleme Araçları Seti" id="card-8">
+    <div class="pc-thumb" onclick="openModal('modelleme')" style="background:linear-gradient(135deg,#f8f0d8,#d8c070)"><div class="pc-thumb-in">🔧</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-stbar st-hi"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">Sanat Malzemeleri</div><div class="pc-name">Seramik Modelleme Araçları</div>
+      <div class="pc-desc">Profesyonel 10'lu modelleme seti: tel kesici, spatula, pürüzlendirici, fırça ve şekillendirici.</div>
+      <div class="vblk"><div class="vtop">Set <span id="vs-8">10'lu</span></div><div class="vopts"><div class="vo sel" onclick="setV(this,'8','10\'lu Set',280)">10'lu Set</div><div class="vo" onclick="setV(this,'8','5\'li Set',150)">5'li Set</div></div></div>
+      <div class="pc-foot"><div><div class="p-now" id="pr-8">₺280</div></div><button class="btn-cart" id="bc-8" onclick="addToCart('8','Modelleme Araçları','🔧','#f8f0d8,#d8c070')">🛒 Ekle</button></div>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="pc fade-up" data-cat="urun" data-price="780" data-name="El Yapımı Seramik Vazo" id="card-9">
+    <div class="pc-thumb" onclick="openModal('seramik-vazo')" style="background:linear-gradient(135deg,#d8e8f8,#7090c0)"><div class="pc-thumb-in">🏵️</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-badges"><span class="badge b-lim">Sınırlı</span></div>
+    <div class="pc-stbar st-lo"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">El Yapımı Ürün</div><div class="pc-name">El Yapımı Seramik Vazo</div>
+      <div class="pc-desc">Tornada şekillendirilmiş, doğal glaze ile kaplı. Her biri numaralı, sınırlı üretim sanat eseri.</div>
+      <div class="vblk"><div class="vtop">Renk <span id="vs-9">Okyanus</span></div><div class="copts"><div class="co sel" style="background:linear-gradient(135deg,#d8e8f8,#7090c0)" data-n="Okyanus Mavisi" onclick="setC(this,'9','Okyanus Mavisi',780)"></div><div class="co" style="background:linear-gradient(135deg,#f0e8d0,#c09060)" data-n="Toprak" onclick="setC(this,'9','Toprak Kahvesi',780)"></div><div class="co" style="background:linear-gradient(135deg,#d8f0d8,#6aaa6a)" data-n="Yeşil" onclick="setC(this,'9','Orman Yeşili',780)"></div></div></div>
+      <div class="pc-foot"><div><div class="p-now" id="pr-9">₺780</div></div><button class="btn-cart" id="bc-9" onclick="addToCart('9','Seramik Vazo','🏵️','#d8e8f8,#7090c0')">🛒 Ekle</button></div>
+      <div class="st-warn">🔥 Son 3 adet!</div>
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="pc fade-up" data-cat="malzeme" data-price="180" data-name="Seramik Atölyesi Önlüğü" id="card-10">
+    <div class="pc-thumb" onclick="openModal('onluk')" style="background:linear-gradient(135deg,#e8d8f0,#9060b0)"><div class="pc-thumb-in">👕</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-stbar st-hi"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">Sanat Malzemeleri</div><div class="pc-name">Seramik Atölyesi Önlüğü</div>
+      <div class="pc-desc">Su ve kir geçirmez profesyonel önlük. Derin cepler, ayarlanabilir bağcık, dayanıklı kanvas.</div>
+      <div class="vblk"><div class="vtop">Beden <span id="vs-10">M</span></div><div class="vopts"><div class="vo" onclick="setV(this,'10','S',180)">S</div><div class="vo sel" onclick="setV(this,'10','M',180)">M</div><div class="vo" onclick="setV(this,'10','L',180)">L</div><div class="vo" onclick="setV(this,'10','XL',180)">XL</div></div></div>
+      <div class="pc-foot"><div><div class="p-now" id="pr-10">₺180</div></div><button class="btn-cart" id="bc-10" onclick="addToCart('10','Atölye Önlüğü','👕','#e8d8f0,#9060b0')">🛒 Ekle</button></div>
+    </div>
+  </div>
+
+  <!-- 11 -->
+  <div class="pc fade-up" data-cat="set" data-price="890" data-name="Çocuk Seramik Başlangıç Seti" id="card-11">
+    <div class="pc-thumb" onclick="openModal('cocuk-set')" style="background:linear-gradient(135deg,#f8d8e8,#f09090)"><div class="pc-thumb-in">🧒</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-badges"><span class="badge b-new">Yeni</span></div>
+    <div class="pc-stbar st-hi"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">Başlangıç Seti</div><div class="pc-name">Çocuk Seramik Seti</div>
+      <div class="pc-desc">4-10 yaş için özel güvenli kil, minik önlük, renkli sırlar ve araçlar bir arada. %15 tasarruf!</div>
+      <div class="pc-foot"><div><div class="p-now">₺890<span class="p-disc">%15</span></div><div class="p-was">₺1.050</div></div><button class="btn-cart" id="bc-11" onclick="addToCart('11','Çocuk Seramik Seti','🧒','#f8d8e8,#f09090')">🛒 Ekle</button></div>
+    </div>
+  </div>
+
+  <!-- 12 -->
+  <div class="pc fade-up" data-cat="urun" data-price="1200" data-name="El Yapımı 3'lü Kase Seti" id="card-12">
+    <div class="pc-thumb" onclick="openModal('kase-set')" style="background:linear-gradient(135deg,#f0e8d0,#b08040)"><div class="pc-thumb-in">🍶</div><div class="pc-zoom">🔍 Detay</div></div>
+    <div class="pc-badges"><span class="badge b-hot">Hediye İçin</span></div>
+    <div class="pc-stbar st-md"><div class="pc-stfill"></div></div>
+    <div class="pc-body">
+      <div class="pc-cat">El Yapımı Ürün</div><div class="pc-name">El Yapımı 3'lü Kase Seti</div>
+      <div class="pc-desc">Birbirini tamamlayan 3 boyutta el yapımı kaseler. Özel hediye kutusunda teslim edilir.</div>
+      <div class="pc-foot"><div><div class="p-now">₺1.200</div><div style="font-size:.65rem;color:var(--teal);font-weight:700;margin-top:2px">🎁 Hediye kutusu dahil</div></div><button class="btn-cart" id="bc-12" onclick="addToCart('12','3\'lü Kase Seti','🍶','#f0e8d0,#b08040')">🛒 Ekle</button></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROMO SECTION -->
+<div class="promo-sec fade-up">
+  <div><div class="eye">🎓 Öğrenci Avantajı</div><h2>Kurs Alanlara<br>Market'te %10 İndirim</h2><p>Herhangi bir kursumuza kayıt yaptırdıysanız tüm sanat malzemelerinde özel indirimden faydalanın.</p></div>
+  <a href="satis.html#kayit-form" class="btn-promo">Ücretsiz Ders Al 🎨</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-grid">
+    <div><div class="f-logo">Tam <span>Sanat</span> Akademi</div><p class="f-desc">Antalya'nın MEB onaylı sanat akademisi. 2020'den beri resim, seramik, müzik ve sahne sanatlarında kaliteli eğitim.</p><div class="f-socials"><a href="https://instagram.com/tamsanatakademi" class="f-soc" aria-label="Instagram">📷</a><a href="https://wa.me/902423247439" class="f-soc" aria-label="WhatsApp">💬</a></div></div>
+    <div class="f-col"><h4>Kurslarımız</h4><ul><li><a href="dersler.html">Resim Kursu</a></li><li><a href="dersler.html">Seramik Kursu</a></li><li><a href="dersler.html">Müzik Kursları</a></li><li><a href="dersler.html">Bale & Dans</a></li><li><a href="dersler.html">Güzel Sanatlar Hazırlık</a></li></ul></div>
+    <div class="f-col"><h4>Market</h4><ul><li><a href="javascript:void(0)" onclick="filterProductsScroll('seramik')">Seramik Kil</a></li><li><a href="javascript:void(0)" onclick="filterProductsScroll('urun')">El Yapımı Ürünler</a></li><li><a href="javascript:void(0)" onclick="filterProductsScroll('malzeme')">Sanat Malzemeleri</a></li><li><a href="javascript:void(0)" onclick="filterProductsScroll('set')">Başlangıç Setleri</a></li></ul></div>
+    <div class="f-col"><h4>İletişim</h4><ul><li><a href="tel:+902423247439">📞 (242) 324 74 39</a></li><li><a href="mailto:tamsanatakademi@gmail.com">✉️ E-posta</a></li><li><a href="https://maps.google.com/?q=1989.+Sk.+No:25+Muratpaşa+Antalya" target="_blank">📍 Muratpaşa, Antalya</a></li></ul></div>
+  </div>
+  <div class="f-bot"><p>© 2026 Tam Sanat Akademi. Tüm hakları saklıdır.</p><p>MEB Onaylı · Muratpaşa, Antalya</p></div>
+</footer>
+
+<script>
+'use strict';
+// ─── VERİ ───
+let cart=[];
+const vP={'1':1850,'2':2200,'2b':1950,'3':1650,'4':900,'5':320,'6':650,'7':1490,'8':280,'9':780,'10':180,'11':890,'12':1200};
+const vN={'1':'No:1 — İnce Şamot','2':'ES40 — İnce Şamot','2b':'No:1 — İnce (Torna)','3':'No:1 — Çocuk / Başlangıç','4':'Gece Mavisi','5':'6\'lı','6':'Küçük','7':'','8':'10\'lu Set','9':'Okyanus Mavisi','10':'M','11':'','12':''};
+
+// ─── VARYANT ───
+function setV(el,id,name,price){el.closest('.vopts').querySelectorAll('.vo').forEach(o=>o.classList.remove('sel'));if(el.classList.contains('oos'))return;el.classList.add('sel');vP[id]=price;vN[id]=name;const p=document.getElementById('pr-'+id);if(p)p.textContent='₺'+price.toLocaleString('tr-TR');const v=document.getElementById('vs-'+id);if(v)v.textContent=name}
+function setC(el,id,name,price){el.closest('.copts').querySelectorAll('.co').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');vN[id]=name;const v=document.getElementById('vs-'+id);if(v)v.textContent=name}
+
+// ─── SEPET ───
+function addToCart(id,name,emoji,gradient){
+  const price=vP[id]||0,variant=vN[id]||'',key=id+'|'+variant;
+  const ex=cart.find(i=>i.key===key);
+  if(ex){ex.qty++}else{cart.push({key,id,name,emoji,gradient,price,variant,qty:1})}
+  updateCartUI();showToast('✓ '+name+' sepete eklendi');
+  const btn=document.getElementById('bc-'+id);
+  if(btn){const o=btn.innerHTML;btn.classList.add('added');btn.innerHTML='✓ Eklendi';btn.disabled=true;setTimeout(()=>{btn.classList.remove('added');btn.innerHTML=o;btn.disabled=false},1800)}
+  updateStickyBuy(id,name,price);
+  if(window.dataLayer)window.dataLayer.push({event:'add_to_cart',product_id:id,price,currency:'TRY'});
+}
+function addById(id){
+  const card=document.getElementById('card-'+id);if(!card)return;
+  const name=card.querySelector('.pc-name')?.textContent||'';
+  const emoji=card.querySelector('.pc-thumb-in')?.textContent?.trim()||'🛒';
+  const bg=card.querySelector('.pc-thumb')?.style.background||'#ccc,#aaa';
+  const m=bg.match(/linear-gradient\(135deg,(.*)\)/);
+  addToCart(id,name,emoji,m?m[1]:'#ccc,#aaa');
+}
+function changeQty(key,delta){const item=cart.find(i=>i.key===key);if(!item)return;item.qty+=delta;if(item.qty<=0)cart=cart.filter(i=>i.key!==key);updateCartUI()}
+function removeItem(key){cart=cart.filter(i=>i.key!==key);updateCartUI()}
+function updateCartUI(){
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0),count=cart.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cTotal').textContent='₺'+total.toLocaleString('tr-TR');
+  const cc=document.getElementById('cCount');cc.textContent=count;cc.classList.toggle('show',count>0);
+  const cont=document.getElementById('cItems');
+  document.querySelectorAll('.ci-row').forEach(e=>e.remove());
+  document.getElementById('cEmpty').style.display=cart.length?'none':'block';
+  cart.forEach(item=>{
+    const d=document.createElement('div');d.className='c-item ci-row';
+    d.innerHTML=`<div class="ci-thumb" style="background:linear-gradient(135deg,${item.gradient})">${item.emoji}</div><div class="ci-info"><div class="ci-name">${item.name}</div><div class="ci-var">${item.variant}</div><div class="ci-acts"><button class="qty-b" onclick="changeQty('${item.key}',-1)">−</button><span class="qty-n">${item.qty}</span><button class="qty-b" onclick="changeQty('${item.key}',1)">+</button><span class="ci-pr">₺${(item.price*item.qty).toLocaleString('tr-TR')}</span></div></div><button class="ci-del" onclick="removeItem('${item.key}')" aria-label="Kaldır">🗑️</button>`;
+    cont.appendChild(d);
+  });
+}
+function openCart(){document.getElementById('cOv').classList.add('open');document.getElementById('cDrw').classList.add('open');document.body.style.overflow='hidden'}
+function closeCart(){document.getElementById('cOv').classList.remove('open');document.getElementById('cDrw').classList.remove('open');document.body.style.overflow=''}
+function checkout(){
+  if(!cart.length)return;
+  const lines=cart.map(i=>`• ${i.name}${i.variant?' ('+i.variant+')':''} x${i.qty} = ₺${(i.price*i.qty).toLocaleString('tr-TR')}`).join('\n');
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const msg=encodeURIComponent(`Merhaba! Tam Sanat Akademi Sanat Market'ten sipariş:\n\n${lines}\n\nToplam: ₺${total.toLocaleString('tr-TR')}\n\nTeslimat bilgisi alabilir miyim?`);
+  window.open(`https://wa.me/902423247439?text=${msg}`,'_blank');
+}
+
+// ─── STİCKY ───
+let sId=null;
+function updateStickyBuy(id,name,price){sId=id;document.getElementById('sbName').textContent=name;document.getElementById('sbPr').textContent='₺'+price.toLocaleString('tr-TR')}
+function stickyAdd(){if(sId)addById(sId)}
+window.addEventListener('scroll',()=>{const sb=document.getElementById('stickyBuy');const vis=window.scrollY>480;sb.classList.toggle('vis',vis);sb.setAttribute('aria-hidden',!vis)},{passive:true});
+
+// ─── MODALİ VERİSİ ───
+const mDB={
+  'kirmizi-kil':{emoji:'🏺',bg:'linear-gradient(135deg,#f5e0d0,#d4906a)',cat:'Kırmızı Çömlek Kili · 25 kg',title:'Kırmızı Çömlek Kili — No:1 / 2 / 3',desc:'Akademide kullandığımız Türk üretimi kırmızı çömlek kili. Üç numara seçeneği ile her çalışma tipine uygun: No:1 torna için ince taneli, No:2 çok yönlü, No:3 kaba şamotlu heykel kili.',features:['No:1 — İnce taneli, pürüzsüz yüzey, torna çalışmaları için','No:2 — Orta plastikiyetli, el + torna uyumlu','No:3 — Kaba şamotlu, büyük form ve heykel','Düşük pişirim: 1000–1100°C','Paket: 25 kg vakumlu çuval'],price:'₺1.850',was:null,disc:null,id:'1'},
+  'samotlu-kil':{emoji:'🏔️',bg:'linear-gradient(135deg,#ede0c8,#b89060)',cat:'Şamotlu Stoneware · 25 kg',title:'Şamotlu Stoneware Kil — ES40 / ES50 / ES120',desc:'Yüksek derece pişirime uygun profesyonel stoneware. Goerg Schneider ES serisi üç numara ile hem ince hem kaba doku seçeneği. İleri seviye seramistler için tercih.',features:['ES40 — İnce şamot, pürüzsüz yüzey, 1280°C','ES50 — Orta şamot, çok yönlü form, 1280°C','ES120 — Kaba şamot, büyük heykel, 1280°C','Düşük rötre, boyutsal kararlılık','Paket: 25 kg vakumlu çuval'],price:'₺2.200',was:null,disc:null,id:'2'},
+  'beyaz-kil':{emoji:'🤍',bg:'linear-gradient(135deg,#f8f5f0,#e8e0d8)',cat:'Beyaz Çömlek Kili · 25 kg',title:'Beyaz Çömlek Kili — No:1 / 2 / Döküm',desc:'Açık beyaz rengiyle sır boyalarında en canlı renk sonuçlarını veren kil. Hem el yapımı hem torna hem de döküm tekniklerine uygun üç çeşit.',features:['No:1 — İnce taneli, torna çalışmaları','No:2 — Orta plastikiyetli, el + torna','Döküm Slip — Likit form, alçı kalıba döküm','Pişirim: 1060–1080°C','Paket: 25 kg (döküm: litre bazında)'],price:'₺1.950',was:null,disc:null,id:'2b'},
+  'terrakota-kil':{emoji:'🪴',bg:'linear-gradient(135deg,#f0e0c0,#cc7040)',cat:'Terrakota Kili · 25 kg',title:'Terrakota Kili — No:1 / 2 / 3',desc:'Sıcak turuncu-kırmızı rengiyle en doğal görünümlü kil çeşidi. Çocuk atölyelerinde ve başlangıç seviyesinde en çok tercih edilen. Kolay şekillendirme, düşük pişirim.',features:['No:1 — Çok yumuşak, 4+ yaş çocuklar için','No:2 — Orta sertlik, genel atölye kullanımı','No:3 — Kaba şamotlu doku, heykel','Pişirim: 950–1050°C','Paket: 25 kg vakumlu çuval'],price:'₺1.650',was:null,disc:null,id:'3'},
+  'yildiz-bardak':{emoji:'⭐',bg:'linear-gradient(135deg,#1a1a3e,#3a3a7e)',cat:'El Yapımı Ürün',title:'Seramik Yıldız Gökyüzü Bardağı',desc:'El yapımı, benzersiz yıldız gökyüzü desenli seramik bardak. Her biri özel, her biri tek parçadır.',features:['%100 el yapımı','Gıda güvenli sırlar','Bulaşık makinesine uygun','350ml kapasite','Koleksiyon parçası'],price:'₺900',was:'₺1.000',disc:'%10 İndirim',id:'4'},
+  'sir-boya':{emoji:'🎨',bg:'linear-gradient(135deg,#f0e8f0,#d090d0)',cat:'Sanat Malzemeleri',title:'Seramik Sır Boyası Seti',desc:'Fırınlamaya uygun, canlı renkli seramik sır boyaları. Mat ve parlak finish seçenekli, profesyonel kalite.',features:['Fırınlamaya uygun (1000–1300°C)','Mat ve parlak finish','Yüksek pigment','Su bazlı, kolay temizlik','6 / 12\'li set veya tekil'],price:'₺320',was:null,disc:null,id:'5'},
+  'seramik-canak':{emoji:'🥣',bg:'linear-gradient(135deg,#f0e0c8,#c8906a)',cat:'El Yapımı Ürün',title:'El Yapımı Seramik Çanak',desc:'Tornada şekillendirilmiş, el boyamalı özgün seramik çanak. Hem dekoratif hem fonksiyonel.',features:['Tornada el yapımı','El fırçası ile boyama','Küçük/Orta/Büyük seçeneği','Gıda güvenli sırlar','Her biri özgün'],price:'₺650',was:null,disc:null,id:'6'},
+  'baslangic-set':{emoji:'📦',bg:'linear-gradient(135deg,#e8f0e0,#a0c080)',cat:'Başlangıç Seti',title:'Seramik Başlangıç Seti',desc:'Kursa yeni başlayanlar için eksiksiz set. İhtiyacın olan her şey tek pakette, %20 tasarruf!',features:['5kg kırmızı çömlek kili','6\'lı sır boya seti','10\'lu modelleme araçları','Atölye önlüğü','Başlangıç rehber kartı'],price:'₺1.490',was:'Ayrı alınsa ₺1.850',disc:'%20 Tasarruf',id:'7'},
+  'modelleme':{emoji:'🔧',bg:'linear-gradient(135deg,#f8f0d8,#d8c070)',cat:'Sanat Malzemeleri',title:'Seramik Modelleme Araçları',desc:'Profesyonel seramik atölyelerinde kullanılan 10\'lu modelleme seti. Her teknik için doğru araç.',features:['Tel kesici','Spatula — yüzey düzeltme','Pürüzlendirici — birleştirme','Yuvarlak & düz şekillendirici','2 adet fırça dahil'],price:'₺280',was:null,disc:null,id:'8'},
+  'seramik-vazo':{emoji:'🏵️',bg:'linear-gradient(135deg,#d8e8f8,#7090c0)',cat:'El Yapımı Ürün',title:'El Yapımı Seramik Vazo',desc:'Tornada şekillendirilmiş, doğal glaze ile kaplanan her biri numaralı, sınırlı üretim sanat eseri.',features:['Sınırlı üretim — 3 renk','Her biri numaralı','Tornada el yapımı','Doğal glaze kaplama','3 renk: Mavi, Kahve, Yeşil'],price:'₺780',was:null,disc:null,id:'9'},
+  'onluk':{emoji:'👕',bg:'linear-gradient(135deg,#e8d8f0,#9060b0)',cat:'Sanat Malzemeleri',title:'Seramik Atölyesi Önlüğü',desc:'Profesyonel su ve kir geçirmez atölye önlüğü. Derin cepler, ayarlanabilir bağcık, kanvas kumaş.',features:['Su ve kir geçirmez kanvas','Derin çift cep','Ayarlanabilir omuz & bel','S/M/L/XL beden','Makinede yıkanabilir'],price:'₺180',was:null,disc:null,id:'10'},
+  'cocuk-set':{emoji:'🧒',bg:'linear-gradient(135deg,#f8d8e8,#f09090)',cat:'Başlangıç Seti',title:'Çocuk Seramik Başlangıç Seti',desc:'4-10 yaş için özel olarak hazırlanmış güvenli çocuk seramik seti. %15 tasarruf!',features:['Çocuk güvenli doğal kil','Minik atölye önlüğü','4 renk güvenli sır boyası','5\'li küçük araçlar','Renkli rehber kart dahil'],price:'₺890',was:'Ayrı alınsa ₺1.050',disc:'%15 Tasarruf',id:'11'},
+  'kase-set':{emoji:'🍶',bg:'linear-gradient(135deg,#f0e8d0,#b08040)',cat:'El Yapımı Ürün',title:'El Yapımı 3\'lü Kase Seti',desc:'Birbirini tamamlayan 3 farklı boyutta el yapımı seramik kaseler. Özel hediye kutusunda teslim.',features:['3 boyut: Küçük/Orta/Büyük','Birbirini tamamlar','Terracotta & glaze kaplama','Hediye kutusu dahil','Gıda güvenli'],price:'₺1.200',was:null,disc:null,id:'12'}
+};
+
+function openModal(id){
+  const d=mDB[id];if(!d)return;
+  document.getElementById('modVis').style.background=d.bg;
+  document.getElementById('modVis').innerHTML=`<span style="font-size:7rem;position:relative;z-index:1">${d.emoji}</span>`;
+  document.getElementById('modInfo').innerHTML=`<div class="mod-cat">${d.cat}</div><h2 class="mod-title">${d.title}</h2><p class="mod-desc">${d.desc}</p><div class="acc"><div class="acc-item"><button class="acc-btn" aria-expanded="true" onclick="toggleAcc(this)">Özellikler <span class="acc-ico">▼</span></button><div class="acc-body" style="max-height:300px"><ul>${d.features.map(f=>`<li>${f}</li>`).join('')}</ul></div></div></div><div class="mod-pr-row"><span class="mod-pr">${d.price}</span>${d.was?`<span class="mod-was">${d.was}</span>`:''} ${d.disc?`<span class="mod-disc">${d.disc}</span>`:''}</div><div class="mod-trust"><span class="tm">🚚 Antalya içi teslimat</span><span class="tm">🎁 Hediye paketi</span><span class="tm">💬 WhatsApp sipariş</span></div><button class="btn-mc" onclick="addById('${d.id}');showToast('✓ Sepete eklendi')">🛒 Sepete Ekle</button><a class="btn-mw" href="https://wa.me/902423247439?text=${encodeURIComponent('Merhaba! '+d.title+' için sipariş vermek istiyorum.')}" target="_blank">💬 WhatsApp ile Sipariş</a>`;
+  document.getElementById('pModal').classList.add('open');document.body.style.overflow='hidden';
+  if(window.dataLayer)window.dataLayer.push({event:'view_item',product_id:d.id});
+}
+function closeModal(){document.getElementById('pModal').classList.remove('open');document.body.style.overflow=''}
+function modOutClick(e){if(e.target.id==='pModal')closeModal()}
+function toggleAcc(btn){const ex=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',!ex);const p=btn.nextElementSibling;p.style.maxHeight=ex?null:p.scrollHeight+'px'}
+
+// ─── FİLTRE ───
+function filterP(cat,btn){
+  if(btn){document.querySelectorAll('.filt-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+  let c=0;document.querySelectorAll('.pc').forEach(card=>{const s=cat==='all'||card.dataset.cat===cat;card.classList.toggle('hidden',!s);if(s)c++;});
+  const labels={all:'Tüm',seramik:'Seramik Kil',urun:'El Yapımı',malzeme:'Malzeme',set:'Set'};
+  document.getElementById('rCount').textContent=c+' ürün ('+(labels[cat]||cat)+')';
+  applyStagger();
+}
+function filterProductsScroll(cat){
+  filterP(cat,null);
+  document.querySelectorAll('.filt-btn').forEach(b=>{
+    const t=b.textContent.toLowerCase();
+    const match=cat==='all'?t.includes('tüm'):cat==='seramik'?t.includes('kil'):cat==='urun'?t.includes('yapımı'):cat==='malzeme'?t.includes('malzeme'):t.includes('set');
+    b.classList.toggle('active',match);
+  });
+  setTimeout(()=>document.getElementById('urunler').scrollIntoView({behavior:'smooth'}),100);
+}
+
+// ─── SIRALAMA ───
+function sortP(val){
+  const g=document.getElementById('pGrid');
+  [...g.querySelectorAll('.pc')].sort((a,b)=>{
+    if(val==='price-asc')return+a.dataset.price-+b.dataset.price;
+    if(val==='price-desc')return+b.dataset.price-+a.dataset.price;
+    if(val==='name')return a.dataset.name.localeCompare(b.dataset.name,'tr');
+    return 0;
+  }).forEach(c=>g.appendChild(c));
+}
+
+// ─── HERO SLIDER ───
+let cur=0,autoT=null;
+const slides=document.querySelectorAll('.hero-slide'),dots=document.querySelectorAll('.hero-dot');
+function goSlide(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=(n+slides.length)%slides.length;slides[cur].classList.add('active');dots[cur].classList.add('active')}
+function nextSlide(){goSlide(cur+1)}
+function prevSlide(){goSlide(cur-1)}
+function startAuto(){autoT=setInterval(nextSlide,5000)}
+function stopAuto(){clearInterval(autoT)}
+startAuto();
+const hs=document.getElementById('heroSlider');
+hs.addEventListener('mouseenter',stopAuto);
+hs.addEventListener('mouseleave',startAuto);
+let tx=0;
+hs.addEventListener('touchstart',e=>{tx=e.changedTouches[0].screenX},{passive:true});
+hs.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-tx;if(Math.abs(dx)>50){stopAuto();dx<0?nextSlide():prevSlide();startAuto()}},{passive:true});
+
+// ─── FADE-UP ───
+const IO=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');IO.unobserve(e.target)}})},{threshold:.07});
+function applyStagger(){let i=0;document.querySelectorAll('.pc.fade-up:not(.hidden)').forEach(el=>{el.style.transitionDelay=(i*.06)+'s';i++});}
+document.querySelectorAll('.fade-up').forEach(el=>IO.observe(el));
+applyStagger();
+
+// ─── TOAST ───
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800)}
+
+// ─── MOBİL MENÜ ───
+function openMob(){document.getElementById('mobMenu').classList.add('open');document.body.style.overflow='hidden'}
+function closeMob(){document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
+
+// ─── KLAVYE ───
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart();closeMob()}});
+</script>
+</body>
+</html>
